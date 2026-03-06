@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "title": "IBM Cloud® Databases for Elasticsearch Gen 2",
+  "introduction": "Elasticsearch Gen 2 combines the power of a full text search engine with the indexing strengths of a JSON document database on IBM's VPC-based platform with isolated compute and private endpoints.",
+  "product_page": "https://www.ibm.com/products/databases-for-elasticsearch",
+  "console_page": "/databases/databases-for-elasticsearch/create",
+  "section_topics": {
+    "links": [
+      {
+        "title": "Getting started with Databases for Elasticsearch Gen 2",
+        "href": "/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-getting-started"
+      },
+      {
+        "title": "Gen 2 Overview: Isolated Compute",
+        "href": "/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute"
+      },
+      {
+        "title": "Understanding Gen 1 and Gen 2",
+        "href": "/docs/cloud-databases-gen2?topic=cloud-databases-gen2-overview-gen1-gen2"
+      },
+      {
+        "title": "Provisioning",
+        "href": "/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-provisioning"
+      },
+      {
+        "title": "Pricing",
+        "href": "/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-pricing"
+      },
+      {
+        "title": "Gen 1 Documentation",
+        "href": "/docs/databases-for-elasticsearch"
+      }
+    ]
+  },
+  "section_highlights": [
+    {
+      "title": "IBM named a leader for cloud database management systems",
+      "description": "Gartner named IBM a leader in Gartner Magic Quadrant for 2021 Cloud Database Management Systems.",
+      "href": "https://www.ibm.com/blog/ibm-is-named-a-leader-in-the-2021-gartner-magic-quadrant-for-cloud-database-management-systems-dbms/",
+      "type": "blog"
+    },
+    {
+      "title": "IBM Training - Cloud",
+      "description": "Includes Power Virtual Server, SAP, VMware, Advocate, Architect, Developer, and Site Reliability Engineer, and more",
+      "href": "https://www.ibm.com/training/cloud",
+      "type": "training"
+    }
+  ],
+  "section_devtools": {
+    "cli": "/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-cdb-reference",
+    "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database"
+  },
+  "section_updates": {
+    "view_more": "/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-elasticsearch-relnotes",
+    "tiles": [
+      {
+        "date": "March 2026",
+        "title": "GA of Databases for Elasticsearch Gen 2"
+      }
+    ]
+  }
+}
