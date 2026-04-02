@@ -47,7 +47,7 @@
     }
   ],
   "section_devtools": {
-    "cli": "/docs/databases-for-postgresql-gen2?topic=databases-for-postgresql-gen2-cdb-reference",
+    "cli": "/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-cdb-reference",
     "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database"
   },
   "section_updates": {
