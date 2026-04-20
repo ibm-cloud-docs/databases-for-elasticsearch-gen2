@@ -21,6 +21,7 @@ toc:
           href: https://www.ibm.com/cloud/learn/elasticsearch
       - topic: getting-started.md
         navtitle: Getting started
+      - learn-es-plat.md
       - include: ../cloud-databases-gen2/overview.md
       - include: ../cloud-databases-gen2/isolated-compute.md
       - learn-dashboard-overview.md
