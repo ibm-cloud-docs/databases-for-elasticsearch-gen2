@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-06"
+lastupdated: "2026-05-19"
 
 keywords: connecting elasticsearch, databases, curl
 
@@ -14,9 +14,24 @@ subcollection: databases-for-elasticsearch-gen2
 # Connecting with `cURL`
 {: #connecting-curl}
 
-You can access your Elasticsearch database directly from a command-line terminal through cURL. Elasticsearch has a wide variety of REST APIs that allow for [cluster monitoring](https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster.html){: external}, [index management](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices.html){: .external} and [searching](https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html){: .external} within the database. 
+You can access your Elasticsearch database directly from a command-line terminal through cURL. Elasticsearch has a wide variety of REST APIs that allow for [cluster monitoring](https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster.html){: external}, [index management](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices.html){: .external} and [searching](https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html){: .external} within the database.
+
+**{{site.data.keyword.databases-for-elasticsearch}} Gen2 requires VPC connectivity.** All connection examples assume you have configured Virtual Private Endpoints (VPE) and are connecting from within the VPC environment. Connections from outside the VPC will fail.
+{: important}
 
 Connection strings are displayed in the _Endpoints_ panel of your deployment's _Overview_ page, and can also be retrieved from the [cloud databases CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api/cloud-databases-api-v5#getconnection).
+
+## Prerequisites for Gen2 connectivity
+{: #connecting-curl-prerequisites}
+
+Before connecting with cURL:
+
+1. **Configure VPC access**: Ensure your Virtual Private Endpoint (VPE) is set up and configured. For instructions, see [Connecting through Virtual Private Endpoints](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-vpes).
+2. **Connect from within VPC**: Your cURL commands must be executed from a system that has VPC access (e.g., a virtual server instance within the VPC).
+3. **Use private endpoints**: All Gen2 endpoints are private and not accessible from the public internet.
+
+If you experience connectivity issues, see [Troubleshooting connections](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-ts-connect).
+{: note}
 
 ![CLI Endpoints panel](images/cli-endpoints-pane.png){: caption="Endpoints section, CLI tab" caption-side="bottom"}
 
@@ -43,16 +58,16 @@ CURL_CA_BUNDLE="/path-to/your_cert_file" curl -u admin:<password> 'https://d5eee
 ```
 
 * `CURL_CA_BUNDLE` - curl performs SSL certificate verification by default. Since your deployment uses a service proprietary certificate, you must specify what certificate to use.
-* `curl` - The command itself.  
-* `-u` - The parameter for the username and password, separated by a colon, to be used as credentials to log in to the Elasticsearch deployment. 
+* `curl` - The command itself.
+* `-u` - The parameter for the username and password, separated by a colon, to be used as credentials to log in to the Elasticsearch deployment.
 * `https://...` - The parameter that specifies the endpoints where the `curl` command connects. It's composed of HTTPS protocol URLs and includes a port number.
-* `/_cluster/health?pretty` - An Elasticsearch Cluster API endpoint that returns the status of your cluster. 
+* `/_cluster/health?pretty` - An Elasticsearch Cluster API endpoint that returns the status of your cluster.
 
 ## Using the service proprietary certificate
 {: #using-cert}
 
-1. Copy the certificate information from the _Endpoints_ panel or the Base64 field of the service credential connection information. 
-2. If needed, decode the Base64 string into text. 
+1. Copy the certificate information from the _Endpoints_ panel or the Base64 field of the service credential connection information.
+2. If needed, decode the Base64 string into text.
 3. Save the certificate to a file. (You can use the Name that is provided or your own file name).
 4. Provide the path to the `CURL_CA_BUNDLE` variable.
 

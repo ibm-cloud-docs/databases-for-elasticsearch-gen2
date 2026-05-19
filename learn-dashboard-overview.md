@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-06"
+lastupdated: "2026-05-19"
 
 keywords: deployment, crn, task, gui, api endpoint, elasticsearch dashboard, elasticsearch connection strings
 
@@ -29,7 +29,7 @@ The _Overview_ page shows you information about your {{site.data.keyword.databas
 ### Resources
 {: #dashboard-overview-resources}
 
-The resources tile contains information and configuration options on the size and resource usage of your deployment. You can [ccale disk, memory, and CPU](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-resources-scaling) and [configure Autoscaling](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-autoscaling).
+The resources tile contains information and configuration options on the size and resource usage of your deployment. You can [scale disk, memory, and CPU](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-resources-scaling) and [configure Autoscaling](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-autoscaling).
 
 ### Recent tasks
 {: #dashboard-overview-tasks}
@@ -50,9 +50,12 @@ Observability: The _Observability_ tile provides access to the {{site.data.keywo
 
 The _Endpoints_ pane within the _Overview_ pane contains connection strings for your deployment. Each tab contains connection information that is tailored to the type of connection or the protocol that uses it. Basic information includes things like _hostname_ and _port_, the TLS service proprietary certificate, TLS/SSL parameters, and the default database of your deployment.
 
+**All endpoints are private by default and are not accessible outside of VPC.** {{site.data.keyword.databases-for-elasticsearch}} Gen2 deployments require VPC connectivity through Virtual Private Endpoints (VPE). You must configure VPC access to connect to your deployment.
+{: important}
+
 Reference tables for the different connection types are available on the [Getting credentials and connection strings](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-connection-strings) page.
 
-Connection strings reflect whether your deployment uses public or private endpoints. You can configure which endpoints are available on your deployment. For more information, see the [Service endpoints integration](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-service-endpoints) page.
+For VPC access configuration instructions, see [Connecting through Virtual Private Endpoints](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-vpes).
 
 You can manage your {{site.data.keyword.databases-for-elasticsearch}} service through the {{site.data.keyword.databases-for}} API. This panel provides the essential information for using the API. For more information, see the [API reference](https://cloud.ibm.com/apidocs/cloud-databases-api) page.
 
