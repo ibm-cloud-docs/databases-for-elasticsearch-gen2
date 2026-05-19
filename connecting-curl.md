@@ -16,7 +16,7 @@ subcollection: databases-for-elasticsearch-gen2
 
 You can access your Elasticsearch database directly from a command-line terminal through cURL. Elasticsearch has a wide variety of REST APIs that allow for [cluster monitoring](https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster.html){: external}, [index management](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices.html){: .external} and [searching](https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html){: .external} within the database.
 
-**{{site.data.keyword.databases-for-elasticsearch}} Gen2 requires VPC connectivity.** All connection examples assume you have configured Virtual Private Endpoints (VPE) and are connecting from within the VPC environment. Connections from outside the VPC will fail.
+{{site.data.keyword.databases-for-elasticsearch}} Gen2 requires VPC connectivity. All connection examples assume you have configured Virtual Private Endpoints (VPE) and are connecting from within the VPC environment. Connections from outside the VPC will fail.
 {: important}
 
 Connection strings are displayed in the _Endpoints_ panel of your deployment's _Overview_ page, and can also be retrieved from the [cloud databases CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api/cloud-databases-api-v5#getconnection).
@@ -26,11 +26,11 @@ Connection strings are displayed in the _Endpoints_ panel of your deployment's _
 
 Before connecting with cURL:
 
-1. **Configure VPC access**: Ensure your Virtual Private Endpoint (VPE) is set up and configured. For instructions, see [Connecting through Virtual Private Endpoints](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-vpes).
-2. **Connect from within VPC**: Your cURL commands must be executed from a system that has VPC access (e.g., a virtual server instance within the VPC).
-3. **Use private endpoints**: All Gen2 endpoints are private and not accessible from the public internet.
+1. **Configure VPC access**. Ensure your Virtual Private Endpoint (VPE) is set up and configured..
+2. **Connect from within VPC**. Your cURL commands must be run from a system that has VPC access (for, example, a virtual server instance within the VPC).
+3. **Use private endpoints**. All Gen2 endpoints are private and not accessible from the public internet.
 
-If you experience connectivity issues, see [Troubleshooting connections](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-ts-connect).
+If you experience connectivity issues, see [Troubleshooting connections](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-troubleshoot-connect&interface=ui).
 {: note}
 
 ![CLI Endpoints panel](images/cli-endpoints-pane.png){: caption="Endpoints section, CLI tab" caption-side="bottom"}

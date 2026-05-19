@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2026
-lastupdated: "2026-03-06"
+lastupdated: "2026-05-19"
 
 keywords: elasticsearch connection strings, databases, elasticsearch service credentials
 
@@ -19,6 +19,9 @@ To connect to {{site.data.keyword.databases-for-elasticsearch_full}}, you need s
 
 ![Endpoints panel](images/getting-started-endpoints-panel.png){: caption="Endpoints panel" caption-side="bottom"}
 
+**{{site.data.keyword.databases-for-elasticsearch}} Gen2 uses private endpoints only.** All service credentials are configured for private endpoint access within VPC. You must have VPC connectivity configured through Virtual Private Endpoints (VPE) to connect to your deployment.
+{: important}
+
 A {{site.data.keyword.databases-for-elasticsearch}} deployment is provisioned with an admin user, and after you [set the admin password](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-user-management&interface=ui#user-management-set-admin-password-ui), you can use its credentials to connect to your deployment.
 {: .tip}
 
@@ -29,18 +32,21 @@ A {{site.data.keyword.databases-for-elasticsearch}} deployment is provisioned wi
 You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections).
 
 ```sh
-ibmcloud cdb deployment-connections example-deployment -u <newusername> [--endpoint-type <endpoint type>]
+ibmcloud cdb deployment-connections example-deployment -u <newusername> --endpoint-type private
 ```
 {: .pre}
 
 Full connection information is returned by the `ibmcloud cdb deployment-connections` command with the `--all` flag. To retrieve all the connection information for a deployment named "example-deployment", use the following command.
 
 ```sh
-ibmcloud cdb deployment-connections example-deployment -u <newusername> --all [--endpoint-type <endpoint type>]
+ibmcloud cdb deployment-connections example-deployment -u <newusername> --all --endpoint-type private
 ```
 {: .pre}
 
-If you don't specify a user, the `deployment-connections` commands return information for the admin user by default. If you don't specify an endpoint type, the connection string returns the public endpoint by default. If your deployment has only a private endpoint, you must specify `--endpoint-type private` or the commands return an error. The user and endpoint type is not enforced. You can use any user on your deployment with either endpoint (if both exist on your deployment).
+**For Gen2 deployments, you must specify `--endpoint-type private` as only private endpoints are available.** Gen2 deployments do not support public endpoints.
+{: important}
+
+If you don't specify a user, the `deployment-connections` commands return information for the admin user by default.
 
 To use the `ibmcloud cdb` CLI commands, you must [install the {{site.data.keyword.databases-for}} plug-in](/docs/cloud-databases?topic=cloud-databases-icd-cli).
 {: .tip}
@@ -49,19 +55,22 @@ To use the `ibmcloud cdb` CLI commands, you must [install the {{site.data.keywor
 {: #connection-strings-api}
 {: api}
 
-To retrieve user's connection strings from the API, use the [`/users/{userid}/connections`](https://{DomainName}/apidocs/cloud-databases-api/cloud-databases-api-v5#getconnection) endpoint. You must specify in the path which user and which type of endpoint (public or private) should be used in the returned connection strings. The user and endpoint type is not enforced. You can use any user on your deployment with either endpoint (if both exist on your deployment).
+To retrieve user's connection strings from the API, use the [`/users/{userid}/connections`](https://{DomainName}/apidocs/cloud-databases-api/cloud-databases-api-v5#getconnection) endpoint. You must specify in the path which user and the endpoint type in the returned connection strings.
+
+**For Gen2 deployments, you must specify `private` as the endpoint type, as only private endpoints are available.**
+{: important}
 
 ```sh
-curl -X GET -H "Authorization: Bearer $APIKEY" 'https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/users/{user_type}/{user_id}/connections/{endpoint_type}'
+curl -X GET -H "Authorization: Bearer $APIKEY" 'https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/users/{user_type}/{user_id}/connections/private'
 ```
 {: .pre}
 
 ## More users and connection strings
 {: #connection-strings-add-users}
 
-Access to your {{site.data.keyword.databases-for-elasticsearch}} deployment is not limited to the admin user. You can create users by using the _Service Credentials_ page, the {{site.data.keyword.IBM_notm}} Cloud CLI, or through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API. 
+Access to your {{site.data.keyword.databases-for-elasticsearch}} deployment is not limited to the admin user. You can create users by using the _Service Credentials_ page, the {{site.data.keyword.IBM_notm}} Cloud CLI, or through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API.
 
-All users on your deployment can use the connection strings, including connection strings for either public or private endpoints. 
+All users on your deployment can use the connection strings, including connection strings for either public or private endpoints.
 
 ### Creating users from the UI
 {: #connection-strings-creating-users-service-cred-ui}
@@ -70,11 +79,14 @@ All users on your deployment can use the connection strings, including connectio
 1. Navigate to the resource detail page for your service.
 2. Click **Service credentials** to open the _Service Credentials_ page.
 3. Click **New credential**.
-4. Choose a descriptive name for your new credential. 
-5. (Optional) Specify whether the new credentials use a public or private endpoint. Use either `{ "service-endpoints": "public" }` / `{ "service-endpoints": "private" }` in the _Add Inline Configuration Parameters_ field to generate connection strings using the specified endpoint. Use of the endpoint is not enforced as it controls which hostnames are in the connection strings. Public endpoints are generated by default.
+4. Choose a descriptive name for your new credential.
+5. **Gen2 deployments use private endpoints only.** Service credentials are automatically configured for VPC private endpoint access. Ensure you have VPC connectivity configured before attempting to connect.
 6. Click **Add** to provision the new credentials. A username and password, and an associated Elasticsearch user is auto-generated.
 
 The new credentials appear in the table, and the connection strings are available as JSON in a click-to-copy field under _View Credentials_.
+
+All connection strings for Gen2 deployments use private endpoints and require VPC connectivity through Virtual Private Endpoints (VPE).
+{: note}
 
 ### Creating users from the CLI
 {: #connection-strings-creating-users-cli}

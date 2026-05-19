@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-05-12"
+lastupdated: "2026-05-19"
 
 keywords: kibana, elasticsearch container, elasticsearch getting started
 
@@ -68,17 +68,34 @@ Follow these steps to complete the tutorial: {: terraform}
 {: #prereqs}
 
 * You need an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/registration){: external}.
+* {{site.data.keyword.databases-for-elasticsearch}} Gen2 is deployed in VPC infrastructure. You must configure a Virtual Private Endpoint (VPE) to connect to your database. For more information, see [VPC connectivity requirements](#vpc-connectivity-requirements).
+
+## VPC connectivity requirements
+{: #vpc-connectivity-requirements}
+
+{{site.data.keyword.databases-for-elasticsearch}} Gen2 deployments are provisioned in VPC infrastructure and require VPC connectivity to access your database.
+{: important}
+
+To connect to your {{site.data.keyword.databases-for-elasticsearch}} Gen2 deployment:
+
+1. **Configure Virtual Private Endpoint (VPE)**: You must set up a VPE to establish connectivity between your VPC and the database service.
+2. **Ensure VPC access**: Your application or client must be running within the VPC or have appropriate VPC access configured.
+3. **Use private endpoints**: All connections to Gen2 deployments use private endpoints only. Public endpoints are not available.
+
+For detailed VPE setup instructions, see [Connecting through Virtual Private Endpoints](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-vpes).
+
+If you experience connectivity issues, see [Troubleshooting connections](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-ts-connect).
+{: note}
 
 ## Step 1: Choose your plan
 {: #choose_plan}
 
-{{site.data.keyword.databases-for-elasticsearch}} offers two different plans:
+{{site.data.keyword.databases-for-elasticsearch}} offers Elasticsearch Enterprise with an Enterprise license.
 
-* {{site.data.keyword.databases-for-elasticsearch}} **Enterprise** deploys the Basic version of Elasticsearch.
+{{site.data.keyword.databases-for-elasticsearch}} **Enterprise** deploys Elasticsearch Enterprise, providing you with a fully managed and scalable Elasticsearch service with enterprise-grade features, allowing you to focus on your applications and data rather than the underlying infrastructure.
 
-* {{site.data.keyword.databases-for-elasticsearch}} **Platinum** deploys the Platinum version of Elasticsearch.
-
-Both plans provide you with a fully managed and scalable Elasticsearch service, allowing you to focus on your applications and data rather than the underlying infrastructure.
+Platinum license support is not currently available.
+{: note}
 
 ### Using APIs
 {: #using_apis}

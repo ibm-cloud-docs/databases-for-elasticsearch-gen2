@@ -50,12 +50,10 @@ Observability: The _Observability_ tile provides access to the {{site.data.keywo
 
 The _Endpoints_ pane within the _Overview_ pane contains connection strings for your deployment. Each tab contains connection information that is tailored to the type of connection or the protocol that uses it. Basic information includes things like _hostname_ and _port_, the TLS service proprietary certificate, TLS/SSL parameters, and the default database of your deployment.
 
-**All endpoints are private by default and are not accessible outside of VPC.** {{site.data.keyword.databases-for-elasticsearch}} Gen2 deployments require VPC connectivity through Virtual Private Endpoints (VPE). You must configure VPC access to connect to your deployment.
+All endpoints are private by default and are not accessible outside of VPC.{{site.data.keyword.databases-for-elasticsearch}} Gen2 deployments require VPC connectivity through Virtual Private Endpoints (VPE). You must configure VPC access to connect to your deployment.
 {: important}
 
 Reference tables for the different connection types are available on the [Getting credentials and connection strings](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-connection-strings) page.
-
-For VPC access configuration instructions, see [Connecting through Virtual Private Endpoints](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-vpes).
 
 You can manage your {{site.data.keyword.databases-for-elasticsearch}} service through the {{site.data.keyword.databases-for}} API. This panel provides the essential information for using the API. For more information, see the [API reference](https://cloud.ibm.com/apidocs/cloud-databases-api) page.
 
