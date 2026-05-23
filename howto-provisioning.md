@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-03-06"
+lastupdated: "2026-05-23"
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api, provision elasticsearch
 
@@ -45,6 +45,9 @@ For more information, see [Gen 2 isolated compute](/docs/cloud-databases-gen2?to
 
 Use the table to choose the machine size (CPU and RAM) for your deployment, and specify the disk size. Gen 2 offers six isolated compute sizes with guaranteed resources.
 
+Verify that the available size selections in the UI match the current offerings. The six standard sizes are: 4x16, 8x32, 8x64, 16x64, 32x128, and 30x240 (CPU x RAM in GB).
+{: note}
+
 Specify the disk size depending on your requirements. It can be increased after provisioning but cannot be decreased to prevent data loss.
 {: note}
 
@@ -53,9 +56,12 @@ Specify the disk size depending on your requirements. It can be increased after 
 {: ui}
 
 - **Database version:** [Set only at deployment]{: tag-red} The deployment version of your database. To ensure optimal performance, run the preferred version. The latest minor version is used automatically. For more information, see [Versioning policy](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-db-version-policy){: external}.
-- **Database edition:** [Set only at deployment]{: tag-red} Enterprise edition is available on Gen 2.
+- **Database edition:** [Set only at deployment]{: tag-red} Elasticsearch Enterprise with an Enterprise license is available on Gen 2. Platinum license is not currently supported.
 - **Encryption:** [Set only at deployment]{: tag-red} If you use [Key Protect](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-reference-key-protect&interface=ui), an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key.
-- **Endpoints:** [Set only at deployment]{: tag-red} Gen 2 deployments support private endpoints only. For more information, see [Service endpoints](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-reference-service-endpoints).
+- **Endpoints:** [Set only at deployment]{: tag-red} Gen 2 deployments support **private endpoints only**. All endpoints are private by default and require VPC connectivity through Virtual Private Endpoints (VPE). For more information, see [Service endpoints](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-reference-service-endpoints).
+
+Gen 2 deployments are provisioned in VPC infrastructure and require VPC connectivity. Ensure you have configured Virtual Private Endpoints (VPE) before attempting to connect to your deployment.
+{: important}
 
 After you select the appropriate settings, click **Create** to start the provisioning process.
 

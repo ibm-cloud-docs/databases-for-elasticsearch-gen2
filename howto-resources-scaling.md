@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-03-06"
+lastupdated: "2026-05-23"
 
 keywords: elasticsearch dedicated cores, databases, manual scaling, disk I/O, memory, CPU, elasticsearch resources, elasticsearch scaling
 
@@ -18,6 +18,9 @@ subcollection: databases-for-elasticsearch-gen2-gen2
 You can manually adjust the resources available to your {{site.data.keyword.databases-for-elasticsearch_full}} Gen 2 deployment to suit your workload and the size of your data.
 
 To scale an [Isolated Compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute) instance, set the relevant `host_flavor` parameter to the Isolated Compute size you're targeting, such as "b3c.4x16.encrypted". The host flavor selection includes both CPU and RAM allocation, so do not separately select CPU and RAM.
+
+**Gen 2 VPC Architecture**: All scaling procedures have been validated for VPC-based deployments. Scaling operations maintain VPC connectivity and do not require reconfiguration of Virtual Private Endpoints (VPE).
+{: note}
 
 ## Resource breakdown
 {: #resource-breakdown}
