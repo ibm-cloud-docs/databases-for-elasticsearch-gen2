@@ -16,15 +16,15 @@ subcollection: databases-for-elasticsearch-gen2
 
 {{site.data.keyword.databases-for}} offers two Elasticsearch services: {{site.data.keyword.databases-for-elasticsearch}} Enterprise and {{site.data.keyword.databases-for-elasticsearch}} Standard. Both plans provide you with a fully managed platform and a scalable Elasticsearch service, allowing you to focus on your applications and data rather than the underlying infrastructure. {{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan deploys the Basic version of Elasticsearch. {{site.data.keyword.databases-for-elasticsearch}} Platinum Plan deploys the Platinum version of Elasticsearch.
 
-**{{site.data.keyword.databases-for-elasticsearch}} Platinum** is only available on Isolated Compute.
+{{site.data.keyword.databases-for-elasticsearch}} Platinum is only available on Isolated Compute.
 {: note}
 
-## {{site.data.keyword.databases-for-elasticsearch}} feature availability and Elastic licensing — before you enable
+## {{site.data.keyword.databases-for-elasticsearch}} feature availability and Elastic licensing: before you enable
 {: #elastic-before-enabling}
 
 Before enabling any Elasticsearch feature in your environment, review the official [Elastic subscriptions page](https://www.elastic.co/subscriptions).
 
-Elastic periodically introduces features under Technical Preview or Beta status. During this phase, a feature might be accessible regardless of your current subscription tier — including on lower-tier or free plans. However, this accessibility is not guaranteed to be permanent.
+Elastic periodically introduces features under Technical Preview or Beta status. During this phase, a feature might be accessible regardless of your current subscription tier, including on lower-tier or free plans. However, this accessibility is not guaranteed to be permanent.
 
 Elastic reserves the right to, without prior notice, graduate a feature from Technical Preview into a paid licensing tier. Customers on lower-tier subscriptions who are actively using that feature at the time of graduation might experience service disruption or loss of access.
 
@@ -33,6 +33,7 @@ Elastic reserves the right to, without prior notice, graduate a feature from Tec
 | Feature is in Technical Preview today | Might be moved to a paid tier without notice |
 | You use it on a Basic or Free plan | Access might be revoked on graduation to a higher tier |
 | No proactive mitigation in place | Potential production disruption at an unplanned time |
+{: caption="Feature scenarios" caption-side="top"}
 
 ### Recommendations
 {: #elastic-recommendations}
