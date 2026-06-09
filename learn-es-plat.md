@@ -14,7 +14,7 @@ subcollection: databases-for-elasticsearch-gen2
 # Plan overview
 {: #elastic-offerings}
 
-{{site.data.keyword.databases-for}} currently offers one Elasticsearch service: {{site.data.keyword.databases-for-elasticsearch}} Enterprise. This plan provide you with a fully managed platform and a scalable Elasticsearch service, allowing you to focus on your applications and data rather than the underlying infrastructure. {{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan deploys the Enterprise license version of Elasticsearch.
+{{site.data.keyword.databases-for}} currently offers one Elasticsearch service: {{site.data.keyword.databases-for-elasticsearch}} Enterprise. This plan provides you with a fully managed platform and a scalable Elasticsearch service, allowing you to focus on your applications and data rather than the underlying infrastructure. {{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan deploys the Enterprise license version of Elasticsearch.
 
 ## {{site.data.keyword.databases-for-elasticsearch}} feature availability and Elastic licensing: before you enable
 {: #elastic-before-enabling}
@@ -47,7 +47,7 @@ All {{site.data.keyword.databases-for-elasticsearch}} clusters on any plan can m
 ## {{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan
 {: #es-enter-plan}
 
-{{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan provides all the key functionalities of the Elasticsearch Service available under an Elastic Enterprise license, including the following:
+The {{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan provides all the key functionalities of the Elasticsearch service available under an Elastic Enterprise license, including the following:
 
 - Security capabilities, including Role Based Access Control (RBAC), field- and document-level security, single sign-on (SAML, OpenID Connect, Kerberos, and JWT), attribute-based access control, Elasticsearch and Kibana audit logging, and encryption at rest support.
 - Data management capabilities, including Index Lifecycle Management (ILM), searchable snapshots, snapshot lifecycle management, and data tiers.
