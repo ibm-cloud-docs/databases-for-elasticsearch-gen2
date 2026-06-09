@@ -76,9 +76,7 @@ In the **Resources** tab, you find the **Hosting model** and **Resource allocati
 
 In the **Resources** tab of the UI, select *Configure* on the **Resource allocations** tile. This opens up a panel where you can adjust your resources.
 
-If your database is on the Isolated Compute hosting model, you then see a "Host sizes" table, where you can select the vCPU and RAM configuration per member for your database.
-
-If you are on the Shared Compute hosting model, you see the Small configuration, providing 0.5 vCPU and 4 GB RAM per member; the Small Custom option; or Custom configuration. Small Custom indicates that your database was scaled with the CLI, API, or Terraform, which provides more fine-grained resource scaling, along with an option for automatically allocated vCPU pro-rated against RAM value. On the UI, you can scale to Small and Custom, but are not able to scale to the fine-grained values provided by the CLI, API, or Terraform. With Custom, drag the slider or adjust the value in the input box to select your database's per member vCPU and RAM values.
+Look for a "Host sizes" table, where you can select the vCPU and RAM configuration per member for your database.
 
 The "Disk (GB/member)" slider is your disk selection per member. Drag the slider or adjust the number in the input box to change the number of GB disk. Note that Disk is tied to IOPS at 1 GB = 10 IOPS.
 
@@ -87,18 +85,6 @@ Members is the number of members of your database. For Elasticsearch, members ar
 Review your total estimated cost in the calculator on the bottom. Note that if you have grandfathered costs, also known as legacy pricing structure, scaling your database instance will remove some or all of your legacy pricing. For more information on grandfathering and when it ends, see the [Hosting models transition timeline](/docs/cloud-databases?topic=cloud-databases-hosting-model-transition&interface=ui#hosting-model-transition-timeline-may25).
 
 After you are done, click *Apply changes"* to trigger the scaling operation.
-
-## Switch to and between hosting models in the UI
-{: #resources-switching-ui}
-{: ui}
-
-In the **Resources** tab of the UI, select *Configure* on the Hosting model tile. This opens up a panel where you can adjust your hosting model selection.
-
-The first option available is "Select your hosting model". Here, you can switch to a different hosting model.
-
-Below, you see the options to also adjust the resources of the new hosting model that you selected. Follow the instructions in the previous section, "Scaling in the UI" to adjust your resources.
-
-Click *Apply changes* to trigger this scale operation.
 
 ## Review current resources and hosting model
 {: #review-resources-cli}
@@ -237,36 +223,6 @@ curl -X GET https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}
 ```
 {: pre}
 
-## Switching to and between Hosting Models in the API
-{: #resources-switching-api}
-{: api}
-
-To scale any {{site.data.keyword.databases-for}} Shared Compute instance, use the the following command, setting `host_flavor` to `multitenant`. If your database is not on Shared Compute, this command will also move a database from a different hosting model to the Shared Compute hosting model.
-
-```sh
-curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/member \
--H 'Authorization: Bearer <>' \
--H 'Content-Type: application/json' \
--d '{"host_flavor":
-        {"id": "multitenant"},
-      "cpu":
-        {"allocation_count": 3},
-      "memory":
-        {"allocation_mb": 12288}
-    }' \
-```
-{: pre}
-
-To scale to a different Isolated Compute size, use the `host_flavor` parameter set to the desired Isolated Compute size. Available hosting sizes and their `host_flavor` value parameters are listed in [Table 1](#host-flavor-parameter-api). For example, `{"host_flavor": "b3c.4x16.encrypted"}`. Note that the host flavor selection includes CPU and RAM sizes (`b3c.4x16.encrypted` is 4 CPU and 16 RAM). Scale with the {{site.data.keyword.databases-for}} [API Scaling endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#setdeploymentscalinggroup){: external}, with a command like:
-
-```sh
-curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/member \
--H 'Authorization: Bearer <>' \
--H 'Content-Type: application/json' \
--d '{"host_flavor": {"id": "b3c.4x16.encrypted"}}'
-```
-{: pre}
-
 Autoscaling is not currently available on {{site.data.keyword.databases-for}} Gen 2. Monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
 
@@ -314,7 +270,6 @@ resource "ibm_database" "<your_database>" {
   service           = "databases-for-elasticsearch"
   resource_group_id = data.ibm_resource_group.group.id
   tags              = ["tag1", "tag2"]
-  adminpassword     = "password12"
   group {
     group_id = "member"
     host_flavor {
@@ -324,67 +279,22 @@ resource "ibm_database" "<your_database>" {
       allocation_mb = 256000
     }
   }
-  users {
-    name     = "user123"
-    password = "password12"
-  }
-  allowlist {
-    address     = "172.168.1.1/32"
-    description = "desc"
-  }
+  
 }
-output "ICD Elasticsearch database connection string" {
-  value = "http://${ibm_database.test_acc.ibm_database_connection.icd_conn}"
+outputs:
+
+your_database_tf_output {
+  "crn": <crn>
+  "group_id": <group_id>
+  "group_name": <group_name>
+  "resource_name": <resource_name>
+  "status": <status>
 }
 ```
 {: codeblock}
 
 Alternatively, you can use pre-built, open-source, and enterprise-ready [Terraform IBM Modules (TIM)](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim) for [{{site.data.keyword.databases-for-elasticsearch}}](https://registry.terraform.io/modules/terraform-ibm-modules/icd-elasticsearch/ibm/latest){: external} that support the auto-scaling feature.
 
-
-## Scaling Isolated Compute in Terraform
-{: #resources-switching-terraform}
-{: terraform}
-
-Scale your {{site.data.keyword.databases-for-elasticsearch}} Gen 2 instance to a different Isolated Compute size by setting the `"host_flavor"` parameter to the desired size. Available hosting sizes and their `host_flavor value` parameters are listed in [Table 1](#host-flavor-parameter-terraform). For example, `{"host_flavor": "b3c.4x16.encrypted"}`. Note that the host flavor selection includes CPU and RAM sizes (`b3c.4x16.encrypted` is 4 CPU and 16 RAM).
-
-To implement your change, run `terraform apply`.
-
-```terraform
-data "ibm_resource_group" "group" {
-  name = "<your_group>"
-}
-resource "ibm_database" "<your_database>" {
-  name              = "<your_database_name>"
-  plan              = "standard"
-  location          = "eu-gb"
-  service           = "databases-for-elasticsearch"
-  resource_group_id = data.ibm_resource_group.group.id
-  tags              = ["tag1", "tag2"]
-  adminpassword     = "password12"
-  group {
-    group_id = "member"
-    host_flavor {
-      id = "b3c.8x32.encrypted"
-    }
-    disk {
-      allocation_mb = 256000
-    }
-  }
-  users {
-    name     = "user123"
-    password = "password12"
-  }
-  allowlist {
-    address     = "172.168.1.1/32"
-    description = "desc"
-  }
-}
-output "ICD Elasticsearch database connection string" {
-  value = "http://${ibm_database.test_acc.ibm_database_connection.icd_conn}"
-}
-```
-{: codeblock}
 
 ### The `host flavor` parameter
 {: #host-flavor-parameter-terraform}
