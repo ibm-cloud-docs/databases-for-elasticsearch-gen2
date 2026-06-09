@@ -43,7 +43,7 @@ You cannot scale down storage. If your data set size has decreased, you can reco
 ### RAM
 {: #resources-scaling-ram}
 
-If you find that your queries and database activity suffer from performance issues due to a lack of memory, you can scale the amount of RAM allocated to your service. Gen 2 uses Isolated Compute, so select the CPU x RAM configuration that matches your resource needs.
+If you find that your queries and database activity suffer from performance issues because of a lack of memory, you can scale the amount of RAM allocated to your service. Gen 2 uses Isolated Compute, so select the CPU x RAM configuration that matches your resource needs.
 
 Adding memory to the total allocation adds memory to the members equally. {{site.data.keyword.databases-for-elasticsearch}} deployments have their memory allocation policy set at 50% heap and 50% system memory, so increasing the amount of RAM increases both heap and system memory. RAM can be scaled up or down.
 
@@ -80,9 +80,9 @@ Look for a "Host sizes" table, where you can select the vCPU and RAM configurati
 
 The "Disk (GB/member)" slider is your disk selection per member. Drag the slider or adjust the number in the input box to change the number of GB disk. Note that Disk is tied to IOPS at 1 GB = 10 IOPS.
 
-Members is the number of members of your database. For Elasticsearch, members are set to 3.
+"Members" is the number of members of your database. For Elasticsearch, members are set to 3.
 
-Review your total estimated cost in the calculator on the bottom. Note that if you have grandfathered costs, also known as legacy pricing structure, scaling your database instance will remove some or all of your legacy pricing. For more information on grandfathering and when it ends, see the [Hosting models transition timeline](/docs/cloud-databases?topic=cloud-databases-hosting-model-transition&interface=ui#hosting-model-transition-timeline-may25).
+Review your total estimated cost in the calculator at the end of the page. Note that if you have grandfathered costs, also known as legacy pricing structure, scaling your database instance will remove some or all of your legacy pricing. For more information on grandfathering and when it ends, see the [Hosting models transition timeline](/docs/cloud-databases?topic=cloud-databases-hosting-model-transition&interface=ui#hosting-model-transition-timeline-may25).
 
 After you are done, click *Apply changes"* to trigger the scaling operation.
 
@@ -90,7 +90,7 @@ After you are done, click *Apply changes"* to trigger the scaling operation.
 {: #review-resources-cli}
 {: cli}
 
-[{{site.data.keyword.cloud_notm}} CLI cloud databases plug-in](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cli) supports viewing and scaling the resources on your deployment. Use the command `cdb deployment-groups` to see current resource information for your service, including which resource groups are adjustable. To scale any of the available resource groups, use `cdb deployment-groups-set` command.
+[{{site.data.keyword.cloud_notm}} CLI cloud databases plug-in](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cli) supports viewing and scaling the resources on your deployment. Use the `cdb deployment-groups` command to see current resource information for your service, including which resource groups are adjustable. To scale any of the available resource groups, use the `cdb deployment-groups-set` command.
 
 For example, with the following command you can view the resource groups for a deployment named "example-deployment":
 
@@ -99,7 +99,7 @@ ibmcloud cdb deployment-groups example-deployment
 ```
 {: pre}
 
-This produces the output:
+This produces the following output:
 
 ```sh
 Group   member
@@ -140,7 +140,7 @@ The deployment has three members, with 3072 MB of RAM and 15360 MB of disk alloc
 {: #resources-scaling-cli}
 {: cli}
 
-The `cdb deployment-groups-set` command allows either the total RAM or total disk allocation to be set in MB. For example, to scale the memory of the "example-deployment" to 4096 MB of RAM for each memory member (for a total memory of 12288 MB), you use the command:
+The `cdb deployment-groups-set` command allows either the total RAM or total disk allocation to be set in MB. For example, to scale the memory of the "example-deployment" to 4096 MB of RAM for each memory member (for a total memory of 12288 MB), use the following command:
 
 ```sh
 ibmcloud cdb deployment-groups-set example-deployment member --memory 12288
@@ -151,9 +151,9 @@ ibmcloud cdb deployment-groups-set example-deployment member --memory 12288
 {: #resources-switching-cli}
 {: cli}
 
-For Gen 2 Isolated Compute instances, memory and CPU are adjusted together by selecting the Isolated Compute size (see all sizes in Table 1). Disk is scaled separately.
+For Gen 2 Isolated Compute instances, memory and CPU are adjusted together by selecting the Isolated Compute size (see all sizes in [Gen 2 host flavor sizing parameter](#table-host-flavor)). Disk is scaled separately.
 
-Note that since the host flavor selection includes CPU and RAM sizes (`b3c.4x16.encrypted` is 4 CPU and 16 RAM), this request does not accept both an Isolated size selection and separate CPU and RAM allocation selections.
+Because the host flavor selection includes CPU and RAM sizes (`b3c.4x16.encrypted` is 4 CPU and 16 RAM), this request does not accept both an Isolated size selection and separate CPU and RAM allocation selections.
 
 ```sh
 ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--disk <val>] [--hostflavor <hostflavor>]
@@ -182,6 +182,7 @@ The `hostflavor` parameter defines your compute sizing. Gen 2 uses Isolated Comp
 | 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
 {: caption="Gen 2 host flavor sizing parameter" caption-side="bottom"}
+{: #table-host-flavor}
 
 ## Review current resources and hosting model
 {: #review-resources-api}
@@ -189,17 +190,18 @@ The `hostflavor` parameter defines your compute sizing. Gen 2 uses Isolated Comp
 
 The _Foundation Endpoint_ that is shown on the _Overview_ panel of your service provides the base URL to access this deployment through the API. Use it with the `/groups` endpoint if you need to manage or automate scaling programmatically.
 
-To view the current and scalable resources on a deployment, use the [/deployments/{id}/groups](https://cloud.ibm.com/apidocs/cloud-databases-api#get-currently-available-scaling-groups-from-a-depl) endpoint.
+To view the current and scalable resources on a deployment, use the [/deployments/{id}/groups](/apidocs/cloud-databases-api#get-currently-available-scaling-groups-from-a-depl) endpoint.
 
 ```sh
 curl -X GET -H "Authorization: Bearer $APIKEY" 'https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups'
 ```
+{: pre}
 
 ## Scaling with the API
 {: #resources-scaling-api}
 {: api}
 
-To scale the memory of a deployment to 4096 MB of RAM for each member (there are 3 so a total memory of 12288 MB), use the [/deployments/{id}/groups/{group_id}](https://cloud.ibm.com/apidocs/cloud-databases-api#set-scaling-values-on-a-specified-group) API endpoint.
+To scale the memory of a deployment to 4096 MB of RAM for each member (there are 3 so a total memory of 12288 MB), use the [/deployments/{id}/groups/{group_id}](/apidocs/cloud-databases-api#set-scaling-values-on-a-specified-group) API endpoint.
 
 ```sh
 curl -X PATCH 'https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/member' \
@@ -252,7 +254,7 @@ Review resource allocations to your database by checking your terraform scripts 
 {: #resources-scaling-terraform}
 {: terraform}
 
-Before executing a Terraform script on an existing instance, use the `terraform plan` command to compare the current infrastructure state with the desired state defined in your Terraform files. Any alteration to the `resource_group_id`, `service plan`, `version`, `key_protect_instance`, `key_protect_key`, `backup_encryption_key_crn` attributes recreates your instance. For a list of current argument references with the `Forces new resource` specification, see the [ibm_database Terraform Registry](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
+Before running a Terraform script on an existing instance, use the `terraform plan` command to compare the current infrastructure state with the desired state defined in your Terraform files. Any alteration to the `resource_group_id`, `service plan`, `version`, `key_protect_instance`, `key_protect_key`, or `backup_encryption_key_crn` attributes recreates your instance. For a list of current argument references with the `Forces new resource` specification, see the [ibm_database Terraform Registry](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}.
 {: important}
 
 Scale your instance by adjusting your Terraform script for the resource you're interested in. In the following example, `host_flavor` and `disk` allocations are specified.
@@ -279,7 +281,7 @@ resource "ibm_database" "<your_database>" {
       allocation_mb = 256000
     }
   }
-  
+
 }
 outputs:
 
