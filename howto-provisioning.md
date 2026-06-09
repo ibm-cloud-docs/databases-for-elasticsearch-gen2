@@ -27,15 +27,15 @@ Provision from the console by specifying the following parameters.
 {: #service_details}
 {: ui}
 
-- **Service name** - The name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
-- **Resource group** - If you are organizing your services into [resource groups](/docs/account?topic=account-account_setup), specify the resource group in this field. Otherwise, you can leave it at default. For more information, see [Managing resource groups](/docs/account?topic=account-rgs).
-- **Location** - The deployment's public cloud region.
+- **Service name** The name can be any string and is the name that is used on the web and in the CLI to identify the new deployment.
+- **Resource group** If you are organizing your services into [resource groups](/docs/account?topic=account-account_setup), specify the resource group in this field. Otherwise, you can leave it as the default. For more information, see [Managing resource groups](/docs/account?topic=account-rgs).
+- **Location** The deployment's public cloud region.
 
 ### Hosting model
 {: #hosting_model}
 {: ui}
 
-{{site.data.keyword.databases-for-elasticsearch}} Gen 2 uses **Isolated Compute**: a secure single-tenant offering for complex, highly-performant enterprise workloads. Each deployment runs on dedicated virtual machines with guaranteed resources.
+{{site.data.keyword.databases-for-elasticsearch}} Gen 2 uses **Isolated Compute**: a secure single-tenant offering for complex, highly performant enterprise workloads. Each deployment runs on dedicated virtual machines with guaranteed resources.
 
 For more information, see [Gen 2 isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute).
 
@@ -56,11 +56,11 @@ Specify the disk size depending on your requirements. It can be increased after 
 {: ui}
 
 - **Database version:** [Set only at deployment]{: tag-red} The deployment version of your database. To ensure optimal performance, run the preferred version. The latest minor version is used automatically. For more information, see [Versioning policy](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-db-version-policy){: external}.
-- **Database edition:** [Set only at deployment]{: tag-red} Elasticsearch Enterprise with an Enterprise license is available on Gen 2. Platinum license is not currently supported.
+- **Database edition:** [Set only at deployment]{: tag-red} Elasticsearch Enterprise with an Enterprise license is available on Gen 2. The Platinum license is not currently supported.
 - **Encryption:** [Set only at deployment]{: tag-red} If you use [Key Protect](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-reference-key-protect&interface=ui), an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key.
 - **Endpoints:** [Set only at deployment]{: tag-red} Gen 2 deployments support **private endpoints only**. All endpoints are private by default and require VPC connectivity through Virtual Private Endpoints (VPE). For more information, see [Service endpoints](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-reference-service-endpoints).
 
-Gen 2 deployments are provisioned in VPC infrastructure and require VPC connectivity. Ensure you have configured Virtual Private Endpoints (VPE) before attempting to connect to your deployment.
+Gen 2 deployments are provisioned in a VPC infrastructure and require VPC connectivity. Ensure that you have configured Virtual Private Endpoints (VPE) before attempting to connect to your deployment.
 {: important}
 
 After you select the appropriate settings, click **Create** to start the provisioning process.
@@ -73,7 +73,7 @@ After you select the appropriate settings, click **Create** to start the provisi
 {: #create-service-instance-cli}
 {: cli}
 
-Before provisioning, follow the instructions provided in the documentation to install the [{{site.data.keyword.cloud_notm}} CLI tool](/docs/cli?topic=cli-install-ibmcloud-cli){: external}.
+Before provisioning, complete the instructions provided in the documentation to install the [{{site.data.keyword.cloud_notm}} CLI tool](/docs/cli?topic=cli-install-ibmcloud-cli){: external}.
 
 1. Log in to {{site.data.keyword.cloud_notm}}. If you use a federated user ID, it's important that you switch to a one-time passcode (`ibmcloud login --sso`), or use an API key (`ibmcloud --apikey key or @key_file`) to authenticate. For more information about how to log in by using the CLI, see [General CLI (ibmcloud) commands](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_login){: external} under `ibmcloud login`.
 
@@ -129,7 +129,7 @@ The `members_host_flavor` parameter defines your Compute sizing. Gen 2 uses Isol
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
 {: caption="Gen 2 host flavor sizing parameter" caption-side="bottom"}
 
-You will see a response like:
+You will see a response like the following:
 
     ```text
     Creating service instance INSTANCE_NAME in resource group default of account    USER...
@@ -160,7 +160,7 @@ You will see a response like:
       ```
       {: pre}
 
-      When complete, you will see a response like:
+      When complete, you will see a response like the following:
 
       ```text
       Retrieving service instance INSTANCE_NAME in resource group default under account USER's Account as USER...
@@ -203,7 +203,7 @@ Autoscaling is not currently available on {{site.data.keyword.databases-for}} Ge
 
 The `service-instance-create` command supports a `-p` parameter, which allows JSON-formatted parameters to be passed to the provisioning process. For example, you can pass Cloud Resource Names (CRNs) as parameter values, which uniquely identify a resource in the cloud. All parameter names and values are passed as strings.
 
-For example, if a database is being provisioned from a particular backup and the new database deployment needs a total of 12 GB of memory across three members, then the command to provision 4 GBs per member looks like:
+For example, if a database is being provisioned from a particular backup and the new database deployment needs a total of 12 GB of memory across three members, the command to provision 4 GBs per member looks like the following:
 
 ```sh
 ibmcloud resource service-instance-create databases-for-elasticsearch <INSTANCE_NAME> enterprise us-south \
@@ -218,7 +218,7 @@ ibmcloud resource service-instance-create databases-for-elasticsearch <INSTANCE_
 {: #provision-controller-api}
 {: api}
 
-Follow these steps to provision by using the [Resource Controller API](https://cloud.ibm.com/apidocs/resource-controller/resource-controller){: external}.
+Complete these steps to provision by using the [Resource Controller API](https://cloud.ibm.com/apidocs/resource-controller/resource-controller){: external}.
 
 1. Obtain an [IAM token from your API token](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#authentication){: external}.
 2. You need to know the ID of the resource group that you would like to deploy to. This information is available through the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_groups).
@@ -370,7 +370,7 @@ Follow these steps to provision by using the [Resource Controller API](https://c
     ```
     {: pre}
 
-5. Once you have all the information, [provision a new resource instance](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#create-resource-instance){: external} with the {{site.data.keyword.cloud_notm}} Resource Controller.
+5. When you have all the information, [provision a new resource instance](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#create-resource-instance){: external} with the {{site.data.keyword.cloud_notm}} Resource Controller.
 
     ```sh
     curl -X POST \
@@ -414,7 +414,7 @@ Follow these steps to provision by using the [Resource Controller API](https://c
     The parameters `name`, `target`, `resource_group`, `resource_plan_id`, and `service_endpoints` are all required.
     {: required}
 
-    The fields in the command are described in the table that follows.
+    The fields in the command are described in the following table.
 
     | Field | Description | Flag |
     |-------|------------|------------|
@@ -425,7 +425,7 @@ Follow these steps to provision by using the [Resource Controller API](https://c
     | `SERVICE_ENDPOINTS_TYPE` | Gen 2 supports `private` endpoints only. For more information, see [Service endpoints](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-reference-service-endpoints). |  |
     | `RESOURCE_GROUP` | The Resource group name. The default value is `default`. | -g |
     | `--parameters` | JSON file or JSON string of parameters to create service instance | -p |
-    | `members_host_flavor` | To provision an Isolated Compute instance, use `{"members_host_flavor": "<members_host_flavor value>"}`. Select desired CPU and RAM configuration. For more information, see the table below, or [Gen 2 isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute).| |
+    | `members_host_flavor` | To provision an Isolated Compute instance, use `{"members_host_flavor": "<members_host_flavor value>"}`. Select desired CPU and RAM configuration. For more information, see [Gen 2 host flavor sizing parameter](#table-host-flavors), or [Gen 2 isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute).| |
     | `service-endpoints` [Required]{: tag-red} | Gen 2 supports `private` endpoints only. For more information, see [Service endpoints](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-reference-service-endpoints){: external}. | |
     {: caption="Basic command format fields" caption-side="top"}
 
@@ -444,6 +444,7 @@ The `members_host_flavor` parameter defines your Compute sizing. Gen 2 uses Isol
 | 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
 {: caption="Gen 2 host flavor sizing parameter" caption-side="bottom"}
+{: #table-host-flavors}
 
 Autoscaling is not currently available on {{site.data.keyword.databases-for}} Gen 2. Monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
@@ -454,21 +455,21 @@ Autoscaling is not currently available on {{site.data.keyword.databases-for}} Ge
 
 In the `--parameters` object you can provide additional information to create your service instance, including:
 
-- `backup_id` - A CRN of a backup resource to restore from. The backup must be created by a database deployment with the same service ID. The backup is loaded after provisioning and the new deployment starts up that uses that data. A backup CRN is in the format `crn:v1:<...>:backup:<uuid>`. If omitted, the database is provisioned empty.
-- `version` - The version of the database to be provisioned. If omitted, the database is created with the most recent major and minor version.
-- `disk_encryption_key_crn` - The CRN of a KMS key (for example, [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started) or [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-about)), which is then used for disk encryption. A KMS key CRN is in the format `crn:v1:<...>:key:<id>`.
+- `backup_id` A CRN of a backup resource to restore from. The backup must be created by a database deployment with the same service ID. The backup is loaded after provisioning and the new deployment starts up that uses that data. A backup CRN is in the format `crn:v1:<...>:backup:<uuid>`. If omitted, the database is provisioned empty.
+- `version` The version of the database to be provisioned. If omitted, the database is created with the most recent major and minor version.
+- `disk_encryption_key_crn` The CRN of a KMS key (for example, [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started) or [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-about)), which is then used for disk encryption. A KMS key CRN is in the format `crn:v1:<...>:key:<id>`.
 - `backup_encryption_key_crn` - The CRN of a KMS key (for example, [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started) or [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-about)), which is then used for backup encryption. A KMS key CRN is in the format `crn:v1:<...>:key:<id>`.
 
     To use a key for your backups, you must first [enable the service-to-service delegation](/docs/cloud-databases?topic=cloud-databases-key-protect&interface=api#key-byok).
     {: note}
 
-- `members_disk_allocation_mb` - Total amount of disk to be allocated to the database. For example, if the value is "30720", and there are three members, then the deployment gets 30 GB of disk total, giving 10 GB of disk per member. If omitted, the default value for the database type is used.
+- `members_disk_allocation_mb` Total amount of disk to be allocated to the database. For example, if the value is "30720", and there are three members, the deployment gets 30 GB of disk total, giving 10 GB of disk per member. If omitted, the default value for the database type is used.
 
 ## Provisioning with Terraform
 {: #provisioning-terraform}
 {: terraform}
 
-Use Terraform to manage your infrastructure through the [`ibm_database` Resource for Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database) supports provisioning {{site.data.keyword.databases-for}} deployments. Alternatively, you can use Terraform IBM Modules to manage your infrastructure through [Terraform IBM Modules for {{site.data.keyword.databases-for-elasticsearch}}](https://registry.terraform.io/modules/terraform-ibm-modules/icd-elasticsearch/ibm/latest){: external}.
+Use Terraform to manage your infrastructure through the [`ibm_database` Resource for Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database), which supports provisioning {{site.data.keyword.databases-for}} deployments. Alternatively, you can use Terraform IBM Modules to manage your infrastructure through [Terraform IBM Modules for {{site.data.keyword.databases-for-elasticsearch}}](https://registry.terraform.io/modules/terraform-ibm-modules/icd-elasticsearch/ibm/latest){: external}.
 
 ### Provisioning with Terraform
 {: #provisioning-isolated-computer-terraform}
