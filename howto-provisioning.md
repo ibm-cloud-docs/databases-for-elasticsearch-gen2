@@ -85,14 +85,14 @@ Before provisioning, complete the instructions provided in the documentation to 
 2. Provision your database with the following command:
 
     ```sh
-    ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> <RESOURCE_GROUP> -p '{"members_host_flavor": "<members_host_flavor value>"}' --service-endpoints="<Endpoint>"
+    ibmcloud resource service-instance-create <INSTANCE_NAME> <SERVICE_NAME> <SERVICE_PLAN_NAME> <LOCATION> <RESOURCE_GROUP> -p '{"members_host_flavor": "<members_host_flavor value>"}'"
     ```
     {: pre}
 
     For example, to provision a {{site.data.keyword.databases-for-elasticsearch}} Gen 2 instance with isolated compute, set the `"members_host_flavor"` parameter to the desired size. Available hosting sizes and their `members_host_flavor value` parameters are listed in [Table 1](#members-host-flavor-parameter-cli). For example, `{"members_host_flavor": "b3c.4x16.encrypted"}`. Note that the host flavor selection includes CPU and RAM sizes (`b3c.4x16.encrypted` is 4 CPU and 16 RAM).
 
     ```sh
-    ibmcloud resource service-instance-create test-database databases-for-elasticsearch enterprise us-south -p '{"members_host_flavor": "b3c.4x16.encrypted"}' --service-endpoints="private"
+    ibmcloud resource service-instance-create test-database databases-for-elasticsearch enterprise-gen2 us-south -p '{"members_host_flavor": "b3c.4x16.encrypted"}'"
     ```
     {: pre}
 
@@ -107,7 +107,6 @@ Before provisioning, complete the instructions provided in the documentation to 
     | `RESOURCE_GROUP` | The Resource group name. The default value is `default`. | -g |
     | `--parameters` | JSON file or JSON string of parameters to create service instance | -p |
     | `members_host_flavor` | To provision an Isolated Compute instance, use `{"members_host_flavor": "<members_host_flavor value>"}`. Select desired CPU and RAM configuration. For more information, see the following table or [Gen 2 isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute).| |
-    | `--service-endpoints` [Required]{: tag-red} | Gen 2 supports `private` endpoints only. For more information, see [Service endpoints](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-reference-service-endpoints){: external}. |  |
     {: caption="Basic command format fields" caption-side="top"}
 
     In the CLI, `service-endpoints` is a flag, not a parameter.
@@ -206,11 +205,11 @@ The `service-instance-create` command supports a `-p` parameter, which allows JS
 For example, if a database is being provisioned from a particular backup and the new database deployment needs a total of 12 GB of memory across three members, the command to provision 4 GBs per member looks like the following:
 
 ```sh
-ibmcloud resource service-instance-create databases-for-elasticsearch <INSTANCE_NAME> enterprise us-south \
+ibmcloud resource service-instance-create databases-for-elasticsearch <INSTANCE_NAME> enterprise-gen2 us-south \
 -p \ '{
   "backup_id": "crn:v1:blue:public:databases-for-elasticsearch:us-south:a/54e8ffe85dcedf470db5b5ee6ac4a8d8:1b8f53db-fc2d-4e24-8470-f82b15c71717:backup:06392e97-df90-46d8-98e8-cb67e9e0a8e6",
   "members_memory_allocation_mb": "4096"
-}' --service-endpoints="private"
+}'
 ```
 {: pre}
 
@@ -241,105 +240,9 @@ Complete these steps to provision by using the [Resource Controller API](https:/
     ```
     {: pre}
 
-4. A host flavor represents fixed sizes of guaranteed resource allocations. To see which host flavors are available in your region, call the [host flavors capability endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#capability) like this:
+4. A host flavor represents fixed sizes of guaranteed resource allocations. To see which host flavors are available in your region, call the [host flavors capability endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#capability).
 
-    ```sh
-    curl -X POST  https://api.{region}.databases.cloud.ibm.com/v5/ibm/capability/flavors  \
-      -H 'Authorization: Bearer <>' \
-      -H 'Content-Type: application/json' \
-      -d '{
-        "deployment": {
-          "type": "elasticsearch",
-          "location": "us-south"
-        }
-      }'
-    ```
-    {: pre}
-
-    This returns:
-
-    ```sh
-    {
-      "deployment": {
-        "type": "elasticsearch",
-        "location": "us-south",
-        "platform": "classic"
-      },
-      "capability": {
-        "flavors": [
-          {
-            "id": "b3c.4x16.encrypted",
-            "name": "4x16",
-            "cpu": {
-              "allocation_count": 4
-            },
-            "memory": {
-              "allocation_mb": 16384
-            },
-            "hosting_size": "xs"
-          },
-          {
-            "id": "b3c.8x32.encrypted",
-            "name": "8x32",
-            "cpu": {
-              "allocation_count": 8
-            },
-            "memory": {
-              "allocation_mb": 32768
-            },
-            "hosting_size": "s"
-          },
-          {
-            "id": "m3c.8x64.encrypted",
-            "name": "8x64",
-            "cpu": {
-              "allocation_count": 8
-            },
-            "memory": {
-              "allocation_mb": 65536
-            },
-            "hosting_size": "s+"
-          },
-          {
-            "id": "b3c.16x64.encrypted",
-            "name": "16x64",
-            "cpu": {
-              "allocation_count": 16
-            },
-            "memory": {
-              "allocation_mb": 65536
-            },
-            "hosting_size": "m"
-          },
-          {
-            "id": "b3c.32x128.encrypted",
-            "name": "32x128",
-            "cpu": {
-              "allocation_count": 32
-            },
-            "memory": {
-              "allocation_mb": 131072
-            },
-            "hosting_size": "l"
-          },
-          {
-            "id": "m3c.30x240.encrypted",
-            "name": "30x240",
-            "cpu": {
-              "allocation_count": 30
-            },
-            "memory": {
-              "allocation_mb": 245760
-            },
-            "hosting_size": "xl"
-          },
-        ]
-      }
-    }
-    ```
-    {: pre}
-
-    As shown, the Isolated Compute host flavors available to a {{site.data.keyword.databases-for-elasticsearch}} Gen 2 instance in the `us-south` region are:
+   The Isolated Compute host flavors available to a {{site.data.keyword.databases-for-elasticsearch}} Gen 2 instance in the `us-south` region are:
 
     - `b3c.4x16.encrypted`
     - `b3c.8x32.encrypted`
@@ -381,10 +284,9 @@ Complete these steps to provision by using the [Resource Controller API](https:/
         "name": "<INSTANCE_NAME>",
         "target": "<targeted-region>",
         "resource_group": "RESOURCE_GROUP_ID",
-        "resource_plan_id": "<SERVICE_PLAN_NAME>",
+        "resource_plan_id": "<SERVICE_PLAN_NAME>"
         "parameters": {
             "members_host_flavor": "<members_host_flavor_value>",
-            "service_endpoints":" <ENDPOINT>",
             "version":"<VERSION>"
         }
       }'
@@ -405,7 +307,6 @@ Complete these steps to provision by using the [Resource Controller API](https:/
         "resource_plan_id": "<SERVICE_PLAN_NAME>", \
         "parameters": {
         "members_host_flavor": "b3c.4x16.encrypted",
-        "service_endpoints": "private"
         } \
       }' \
     ```
@@ -422,10 +323,9 @@ Complete these steps to provision by using the [Resource Controller API](https:/
     | `SERVICE_NAME` [Required]{: tag-red} | Name or ID of the service. For {{site.data.keyword.databases-for-elasticsearch}}, use `databases-for-elasticsearch`. |  |
     | `SERVICE_PLAN_NAME` [Required]{: tag-red} | `enterprise` or `platinum` |  |
     | `TARGET` [Required]{: tag-red} | The region where you want to deploy. To retrieve a list of regions, use the `ibmcloud regions` command. |  |
-    | `SERVICE_ENDPOINTS_TYPE` | Gen 2 supports `private` endpoints only. For more information, see [Service endpoints](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-reference-service-endpoints). |  |
     | `RESOURCE_GROUP` | The Resource group name. The default value is `default`. | -g |
     | `--parameters` | JSON file or JSON string of parameters to create service instance | -p |
-    | `members_host_flavor` | To provision an Isolated Compute instance, use `{"members_host_flavor": "<members_host_flavor value>"}`. Select desired CPU and RAM configuration. For more information, see [Gen 2 host flavor sizing parameter](#table-host-flavors), or [Gen 2 isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute).| |
+    | `members_host_flavor` | To provision an Isolated Compute instance, use `{"members_host_flavor": "<members_host_flavor value>"}`. Select desired CPU and RAM configuration. For more information, see the table below, or [Gen 2 isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute).| |
     | `service-endpoints` [Required]{: tag-red} | Gen 2 supports `private` endpoints only. For more information, see [Service endpoints](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-reference-service-endpoints){: external}. | |
     {: caption="Basic command format fields" caption-side="top"}
 
@@ -483,13 +383,11 @@ data "ibm_resource_group" "group" {
 }
 resource "ibm_database" "<your_database>" {
   name              = "<your_database_name>"
-  plan              = "standard"
+  plan              = "enterprise-gen2"
   location          = "eu-gb"
   service           = "databases-for-elasticsearch"
   resource_group_id = data.ibm_resource_group.group.id
-  service_endpoints = "private"
   tags              = ["tag1", "tag2"]
-  adminpassword     = "password12"
   # Pin the database version at provision time.
   # If omitted, the newest available major/minor is selected (per service behavior).
   version = "<VERSION_STRING>"                  # e.g. "8.19" for Elasticsearch preferred major
@@ -501,14 +399,6 @@ resource "ibm_database" "<your_database>" {
     disk {
       allocation_mb = 256000
     }
-  }
-  users {
-    name     = "user123"
-    password = "password12"
-  }
-  allowlist {
-    address     = "172.168.1.1/32"
-    description = "desc"
   }
 }
 output "ICD Elasticsearch database connection string" {
