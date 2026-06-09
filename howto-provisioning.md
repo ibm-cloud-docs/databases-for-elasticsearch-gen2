@@ -325,7 +325,7 @@ Complete these steps to provision by using the [Resource Controller API](https:/
     | `TARGET` [Required]{: tag-red} | The region where you want to deploy. To retrieve a list of regions, use the `ibmcloud regions` command. |  |
     | `RESOURCE_GROUP` | The Resource group name. The default value is `default`. | -g |
     | `--parameters` | JSON file or JSON string of parameters to create service instance | -p |
-    | `members_host_flavor` | To provision an Isolated Compute instance, use `{"members_host_flavor": "<members_host_flavor value>"}`. Select desired CPU and RAM configuration. For more information, see the table below, or [Gen 2 isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute).| |
+    | `members_host_flavor` | To provision an Isolated Compute instance, use `{"members_host_flavor": "<members_host_flavor value>"}`. Select desired CPU and RAM configuration. For more information, see [Gen 2 host flavor sizing parameter](#table-host-flavors), or [Gen 2 isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute).| |
     | `service-endpoints` [Required]{: tag-red} | Gen 2 supports `private` endpoints only. For more information, see [Service endpoints](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-reference-service-endpoints){: external}. | |
     {: caption="Basic command format fields" caption-side="top"}
 
