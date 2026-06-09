@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2026
-lastupdated: "2026-05-23"
+lastupdated: "2026-06-09"
 
 keywords: elasticsearch, databases, admin user, service credentials, ops manager, elasticsearch managing users, roles, root account
 
@@ -55,10 +55,10 @@ ibmcloud cdb user-password example-deployment admin <newpassword>
 The *Foundation endpoint* that is shown on the *Overview* panel in the Deployment details section of your service provides the base URL to access this deployment through the API. Use it with the [Set specified user's password](/apidocs/cloud-databases-api/cloud-databases-api-v5#updateuser){: external} endpoint to set the admin password.
 
 ```sh
-curl -X PATCH `https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/users/admin` \
--H `Authorization: Bearer <>` \
--H `Content-Type: application/json` \
--d `{"password":"newrootpasswordsupersecure21"}` \
+curl -X PATCH 'https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/users/admin' \
+-H "Authorization: Bearer $APIKEY" \
+-H "Content-Type: application/json" \
+-d '{"password":"newrootpasswordsupersecure21"}'
 ```
 {: pre}
 

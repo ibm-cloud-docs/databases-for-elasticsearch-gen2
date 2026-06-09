@@ -49,7 +49,6 @@ toc:
           label: Configuring Elasticsearch
           topics:
           - howto-plugins.md
-          - howto-file-uploads.md
       - include: ../cloud-databases-gen2/howto-manage-backups.md
       - include: ../cloud-databases-gen2/backup-restore.md
       - topicgroup:

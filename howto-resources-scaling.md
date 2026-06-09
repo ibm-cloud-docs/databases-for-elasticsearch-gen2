@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-05-23"
+lastupdated: "2026-06-09"
 
 keywords: elasticsearch dedicated cores, databases, manual scaling, disk I/O, memory, CPU, elasticsearch resources, elasticsearch scaling
 
@@ -233,7 +233,7 @@ curl -X PATCH 'https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{
 Use the following command to review the value of the `host_flavor` attribute. This will be null if the database is on a deprecated hosting model (not Shared or Isolated Compute).
 
 ```sh
-curl -X GET https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups -H 'Authorization: Bearer <>' \
+curl -X GET https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups -H 'Authorization: Bearer <>'
 ```
 {: pre}
 
@@ -244,9 +244,9 @@ curl -X GET https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}
 To scale any {{site.data.keyword.databases-for}} Shared Compute instance, use the the following command, setting `host_flavor` to `multitenant`. If your database is not on Shared Compute, this command will also move a database from a different hosting model to the Shared Compute hosting model.
 
 ```sh
-curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/member
--H 'Authorization: Bearer <>'
--H 'Content-Type: application/json'
+curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/member \
+-H 'Authorization: Bearer <>' \
+-H 'Content-Type: application/json' \
 -d '{"host_flavor":
         {"id": "multitenant"},
       "cpu":
@@ -260,10 +260,10 @@ curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{i
 To scale to a different Isolated Compute size, use the `host_flavor` parameter set to the desired Isolated Compute size. Available hosting sizes and their `host_flavor` value parameters are listed in [Table 1](#host-flavor-parameter-api). For example, `{"host_flavor": "b3c.4x16.encrypted"}`. Note that the host flavor selection includes CPU and RAM sizes (`b3c.4x16.encrypted` is 4 CPU and 16 RAM). Scale with the {{site.data.keyword.databases-for}} [API Scaling endpoint](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#setdeploymentscalinggroup){: external}, with a command like:
 
 ```sh
-curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/member
--H 'Authorization: Bearer <>'
--H 'Content-Type: application/json'
--d '{"host_flavor": {"id": "b3c.4x16.encrypted"}}' \
+curl -X PATCH https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups/member \
+-H 'Authorization: Bearer <>' \
+-H 'Content-Type: application/json' \
+-d '{"host_flavor": {"id": "b3c.4x16.encrypted"}}'
 ```
 {: pre}
 

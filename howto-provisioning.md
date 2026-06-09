@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-05-23"
+lastupdated: "2026-06-09"
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api, provision elasticsearch
 
@@ -246,7 +246,7 @@ Follow these steps to provision by using the [Resource Controller API](https://c
     ```sh
     curl -X POST  https://api.{region}.databases.cloud.ibm.com/v5/ibm/capability/flavors  \
       -H 'Authorization: Bearer <>' \
-      -H 'ContentType: application/json' \
+      -H 'Content-Type: application/json' \
       -d '{
         "deployment": {
           "type": "elasticsearch",
@@ -381,7 +381,7 @@ Follow these steps to provision by using the [Resource Controller API](https://c
         "name": "<INSTANCE_NAME>",
         "target": "<targeted-region>",
         "resource_group": "RESOURCE_GROUP_ID",
-        "resource_plan_id": "<SERVICE_PLAN_NAME>"
+        "resource_plan_id": "<SERVICE_PLAN_NAME>",
         "parameters": {
             "members_host_flavor": "<members_host_flavor_value>",
             "service_endpoints":" <ENDPOINT>",
