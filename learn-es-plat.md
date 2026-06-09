@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-06-01"
+lastupdated: "2026-06-09"
 
 keywords: elasticsearch enterprise, elasticsearch platinum, elasticsearch plans, features
 
@@ -14,10 +14,7 @@ subcollection: databases-for-elasticsearch-gen2
 # Plan overview
 {: #elastic-offerings}
 
-{{site.data.keyword.databases-for}} offers two Elasticsearch services: {{site.data.keyword.databases-for-elasticsearch}} Enterprise and {{site.data.keyword.databases-for-elasticsearch}} Standard. Both plans provide you with a fully managed platform and a scalable Elasticsearch service, allowing you to focus on your applications and data rather than the underlying infrastructure. {{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan deploys the Basic version of Elasticsearch. {{site.data.keyword.databases-for-elasticsearch}} Platinum Plan deploys the Platinum version of Elasticsearch.
-
-{{site.data.keyword.databases-for-elasticsearch}} Platinum is only available on Isolated Compute.
-{: note}
+{{site.data.keyword.databases-for}} currently offers one Elasticsearch service: {{site.data.keyword.databases-for-elasticsearch}} Enterprise. This plan provide you with a fully managed platform and a scalable Elasticsearch service, allowing you to focus on your applications and data rather than the underlying infrastructure. {{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan deploys the Enterprise license version of Elasticsearch.
 
 ## {{site.data.keyword.databases-for-elasticsearch}} feature availability and Elastic licensing: before you enable
 {: #elastic-before-enabling}
@@ -45,23 +42,16 @@ Elastic reserves the right to, without prior notice, graduate a feature from Tec
 
 Our strategic partnership with [Elastic](https://www.elastic.co/about/){: external} since January 2023 means that we are able to offer more and richer functionality, as well as world-class levels of support.
 
-{{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan does not deploy Elasticsearch Enterprise version.
-{: note}
-
 All {{site.data.keyword.databases-for-elasticsearch}} clusters on any plan can make full use of other Elastic Stack components, such as [Kibana](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-getting-started#kibana), [Logstash](https://www.elastic.co/logstash/){: external}, and [Beats](https://www.elastic.co/beats/){: external}.
 
 ## {{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan
 {: #es-enter-plan}
 
-{{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan has all the key functionalities of the Elasticsearch Service, such as [Role Based Access Control (RBAC)](https://www.elastic.co/guide/en/elasticsearch/reference/7.17/es-security-principles.html#security-create-appropriate-users){: external} and [Index Lifecycle Management (ILM)](https://www.elastic.co/guide/en/elasticsearch/reference/7.17/index-lifecycle-management.html){: external}, security, alerting, monitoring, reporting, and graph capabilities.
+{{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan provides all the key functionalities of the Elasticsearch Service available under an Elastic Enterprise license, including the following:
 
-
-## {{site.data.keyword.databases-for-elasticsearch}} Platinum Plan
-{: #es-platinum-plan}
-
-{{site.data.keyword.databases-for-elasticsearch}} Platinum Plan offers all the features of the Enterprise Plan, plus a richer array of functionality around integrations (connectors and web crawlers), security features (logging and access control), document-level security, and machine learning capabilities (anomaly detection, data frame analysis, and inference and model management), among others.
-
-Access to Platinum features on an IBM deployment is primarily determined by the accessibility of a feature through the Elasticsearch API and the need for modifications to configuration files. Configuration files update is not currently supported for IBM deployments.
-
-For questions regarding specific feature support, submit a [support ticket](https://cloud.ibm.com/unifiedsupport/cases/add){: external}.
-{: note}
+- Security capabilities, including Role Based Access Control (RBAC), field- and document-level security, single sign-on (SAML, OpenID Connect, Kerberos, and JWT), attribute-based access control, Elasticsearch and Kibana audit logging, and encryption at rest support.
+- Data management capabilities, including Index Lifecycle Management (ILM), searchable snapshots, snapshot lifecycle management, and data tiers.
+- Alerting capabilities, including Watcher and machine learning anomaly detection rule types.
+- Monitoring capabilities, including full-stack monitoring across the Elastic Stack.
+- Reporting capabilities, including PDF and PNG reports.
+- Graph capabilities, including graph exploration and analytics.
