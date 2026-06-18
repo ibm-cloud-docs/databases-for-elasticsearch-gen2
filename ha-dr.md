@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-03-06"
+lastupdated: "2026-06-18"
 
 keywords: HA, DR, high availability, disaster recovery, disaster recovery plan, disaster event, elasticsearch
 
@@ -95,7 +95,7 @@ Several minutes of database unavailability or connection interruption are not ex
 
 {{site.data.keyword.databases-for-elasticsearch}} does not have any restrictions on the number of connections you open to the database as it uses REST API to interact with the database.  Elasticsearch’s default settings provide a good out-of-box experience for basic operations, such as full text search, highlighting, aggregations, and indexing.
 
-If you want more performance out of our database, see the [Optimize Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/how-to.html){: .external} page for more information.
+If you want more performance out of your database, see the [Optimize Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/how-to.html){: .external} page for more information.
 
 ## Your responsibilities for HA and DR
 {: #feature-responsibilities}
