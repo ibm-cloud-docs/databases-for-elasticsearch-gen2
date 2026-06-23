@@ -62,7 +62,6 @@ toc:
           label: Enhancing security
           topics:
           - include: ../cloud-databases-gen2/manage-scc.md
-          - include: ../cloud-databases-gen2/howto-allowlists.md
           - include: ../cloud-databases-gen2/reference-iam.md
           - include: ../cloud-databases-gen2/reference-key-protect.md
           - include: ../cloud-databases-gen2/reference-hpcs.md

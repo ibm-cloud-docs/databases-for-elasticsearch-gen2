@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-05-19"
+lastupdated: "2026-06-23"
 
 keywords: kibana, elasticsearch container, elasticsearch getting started
 
@@ -84,8 +84,7 @@ To connect to your {{site.data.keyword.databases-for-elasticsearch}} Gen2 deploy
 
 For detailed VPE setup instructions, see [Connecting through Virtual Private Endpoints](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-vpes).
 
-If you experience connectivity issues, see [Troubleshooting connections](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-ts-connect).
-{: note}
+
 
 ## Step 1: Choose your plan
 {: #choose_plan}
@@ -103,7 +102,7 @@ Platinum license support is not currently available.
 
 Use the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction){: external} to work with your {{site.data.keyword.databases-for-elasticsearch}} instance. The resource controller API is used to [provision an instance](#provision_instance_api).
 
-You will need an API key to perform actions via the API. Follow [these steps](/docs/account?topic=account-userapikey&interface=ui#create_user_key){: external} to create an IBM Cloud API key that enables you to use the API to provision infrastructure into your account. You can create up to 20 API keys.
+You will need an API key to perform actions via the API. Follow [these steps](/docs/iam?topic=iam-userapikey&interface=ui#create_user_key){: external} to create an IBM Cloud API key that enables you to use the API to provision infrastructure into your account. You can create up to 20 API keys.
 
 For security reasons, the API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key.
 {: note}
@@ -137,7 +136,7 @@ Follow [these steps](/docs/databases-for-elasticsearch?topic=databases-for-elast
 {: #provision_instance_tf}
 {: terraform}
 
-You need an API key to perform actions via Terraform. Follow [these steps](/docs/account?topic=account-userapikey&interface=ui#create_user_key){: external} to create an IBM Cloud API key that enables Terraform to provision infrastructure into your account. You can create up to 20 API keys.
+You need an API key to perform actions via Terraform. Follow [these steps](/docs/iam?topic=iam-userapikey&interface=ui#create_user_key){: external} to create an IBM Cloud API key that enables Terraform to provision infrastructure into your account. You can create up to 20 API keys.
 
 For security reasons, the API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key.
 {: note}
@@ -290,7 +289,7 @@ Visit `http://0.0.0.0:5601` in your browser to see Kibana. `0.0.0.0` is the `ser
 
 For more information, see the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html){: external}.
 
-Looking for more tools on managing your databases and data? You can connect to your deployment with the [IBM Cloud CLI](/docs/cli?topic=cli-install-ibmcloud-cli), the [Cloud Databases CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference), or the [Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api).
+Looking for more tools on managing your databases and data? You can connect to your deployment with the [IBM Cloud CLI](/docs/cli?topic=cli-install-ibmcloud-cli), the [Cloud Databases CLI plug-in](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference), or the [Cloud Databases API](https://cloud.ibm.com/apidocs/cloud-databases-api).
 
 If you plan to use {{site.data.keyword.databases-for-elasticsearch}} for your applications, check out [Connecting an external application](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-external-app) and [Connecting an IBM Cloud application](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-ibmcloud-app).
 

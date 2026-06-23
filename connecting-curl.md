@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-19"
+lastupdated: "2026-06-23"
 
 keywords: connecting elasticsearch, databases, curl
 
@@ -19,7 +19,7 @@ You can access your Elasticsearch database directly from a command-line terminal
 {{site.data.keyword.databases-for-elasticsearch}} Gen2 requires VPC connectivity. All connection examples assume you have configured Virtual Private Endpoints (VPE) and are connecting from within the VPC environment. Connections from outside the VPC will fail.
 {: important}
 
-Connection strings are displayed in the _Endpoints_ panel of your deployment's _Overview_ page, and can also be retrieved from the [cloud databases CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections), and the [API](https://{DomainName}/apidocs/cloud-databases-api/cloud-databases-api-v5#getconnection).
+Connection strings are displayed in the _Endpoints_ panel of your deployment's _Overview_ page, and can also be retrieved from the [cloud databases CLI plug-in](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference), and the [API](https://{DomainName}/apidocs/cloud-databases-api/cloud-databases-api-v5#getconnection).
 
 ## Prerequisites for Gen2 connectivity
 {: #connecting-curl-prerequisites}

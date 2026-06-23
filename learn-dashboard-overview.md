@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-19"
+lastupdated: "2026-06-23"
 
 keywords: deployment, crn, task, gui, api endpoint, elasticsearch dashboard, elasticsearch connection strings
 
@@ -68,8 +68,7 @@ The _Backups_ tab is the UI for managing your deployments backups. All of the av
 The _Settings_ tab contains the UI for many of the tunable settings for your deployment. You can
 - view encryption details. Encryption at rest is enabled for all {{site.data.keyword.databases-for-elasticsearch}} deployments. If you brought your own encryption key from [Key Protect](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-key-protect&interface=ui), the panel provides a link to your Key Protect instance and the _Encryption Key_ field has the name of the key.
 - [Change the admin password](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-user-management&interface=ui#user-management-set-admin-password-ui)
-- [Implement or modify an IP allowlist](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-allowlisting&interface=ui)
-- [Context-based restrictions](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-cbr&interface=ui)
+
 
 
 ## Service credentials
