@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-06-09"
+lastupdated: "2026-06-25"
 
 keywords: provision cloud databases, terraform, provisioning parameters, cli, resource controller api, provision elasticsearch
 
@@ -15,7 +15,7 @@ subcollection: databases-for-elasticsearch-gen2-gen2
 # Provisioning
 {: #provisioning}
 
-Provision an {{site.data.keyword.databases-for-elasticsearch_full}} Gen 2 deployment through the [catalog](https://cloud.ibm.com/databases/databases-for-elasticsearch-gen2/create){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cli){: external}, the [{{site.data.keyword.databases-for}} API](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api){: external}, through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}, or through pre-built, open-source, and enterprise-ready [Terraform IBM Modules (TIM)](https://registry.terraform.io/modules/terraform-ibm-modules/icd-elasticsearch/ibm/latest){: external}.
+Provision an {{site.data.keyword.databases-for-elasticsearch_full}} Gen 2 deployment through the [catalog](https://cloud.ibm.com/databases/databases-for-elasticsearch-gen2/create){: external}, the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference&interface=cli){: external}, the [{{site.data.keyword.databases-for}} API](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-api){: external}, through [Terraform](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database){: external}, or through pre-built, open-source, and enterprise-ready [Terraform IBM Modules (TIM)](https://registry.terraform.io/modules/terraform-ibm-modules/icd-elasticsearch/ibm/latest){: external}.
 
 ## Provisioning through the {{site.data.keyword.cloud_notm}} console
 {: #catalog}
@@ -55,10 +55,10 @@ Specify the disk size depending on your requirements. It can be increased after 
 {: #service_configuration}
 {: ui}
 
-- **Database version:** [Set only at deployment]{: tag-red} The deployment version of your database. To ensure optimal performance, run the preferred version. The latest minor version is used automatically. For more information, see [Versioning policy](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-db-version-policy){: external}.
+- **Database version:** [Set only at deployment]{: tag-red} The deployment version of your database. To ensure optimal performance, run the preferred version. The latest minor version is used automatically. For more information, see [Versioning policy](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-versioning-policy){: external}.
 - **Database edition:** [Set only at deployment]{: tag-red} Elasticsearch Enterprise with an Enterprise license is available on Gen 2. The Platinum license is not currently supported.
-- **Encryption:** [Set only at deployment]{: tag-red} If you use [Key Protect](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-reference-key-protect&interface=ui), an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key.
-- **Endpoints:** [Set only at deployment]{: tag-red} Gen 2 deployments support **private endpoints only**. All endpoints are private by default and require VPC connectivity through Virtual Private Endpoints (VPE). For more information, see [Service endpoints](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-reference-service-endpoints).
+- **Encryption:** [Set only at deployment]{: tag-red} If you use [Key Protect](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-key-protect&interface=ui), an instance and key can be selected to encrypt the deployment's disk. If you do not use your own key, the deployment automatically creates and manages its own disk encryption key.
+- **Endpoints:** [Set only at deployment]{: tag-red} Gen 2 deployments support **private endpoints only**. All endpoints are private by default and require VPC connectivity through Virtual Private Endpoints (VPE). For more information, see [Private endpoints](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-private-endpoints-gen2).
 
 Gen 2 deployments are provisioned in a VPC infrastructure and require VPC connectivity. Ensure that you have configured Virtual Private Endpoints (VPE) before attempting to connect to your deployment.
 {: important}
@@ -231,7 +231,7 @@ Complete these steps to provision by using the [Resource Controller API](https:/
 
 3. You need to know the region you want to deploy to.
 
-    To list all of the regions that deployments can be provisioned into from the current region, use the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference){: external}.
+    To list all of the regions that deployments can be provisioned into from the current region, use the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference&interface=cli){: external}.
 
     The command looks like:
 
@@ -326,7 +326,7 @@ Complete these steps to provision by using the [Resource Controller API](https:/
     | `RESOURCE_GROUP` | The Resource group name. The default value is `default`. | -g |
     | `--parameters` | JSON file or JSON string of parameters to create service instance | -p |
     | `members_host_flavor` | To provision an Isolated Compute instance, use `{"members_host_flavor": "<members_host_flavor value>"}`. Select desired CPU and RAM configuration. For more information, see [Gen 2 host flavor sizing parameter](#table-host-flavors), or [Gen 2 isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute).| |
-    | `service-endpoints` [Required]{: tag-red} | Gen 2 supports `private` endpoints only. For more information, see [Service endpoints](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-reference-service-endpoints){: external}. | |
+    | `service-endpoints` [Required]{: tag-red} | Gen 2 supports `private` endpoints only. For more information, see [Service endpoints](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-private-endpoints-gen2){: external}. | |
     {: caption="Basic command format fields" caption-side="top"}
 
 ### The `members host flavor` parameter

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2026
-lastupdated: "2026-05-19"
+lastupdated: "2026-06-25"
 
 keywords: elasticsearch connection strings, databases, elasticsearch service credentials
 
@@ -29,7 +29,7 @@ A {{site.data.keyword.databases-for-elasticsearch}} deployment is provisioned wi
 {: #connection-strings-cli}
 {: cli}
 
-You can also grab connection strings from the [CLI](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections).
+You can also grab connection strings from the [CLI](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference&interface=cli).
 
 ```sh
 ibmcloud cdb deployment-connections example-deployment -u <newusername> --endpoint-type private
