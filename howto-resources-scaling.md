@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-06-09"
+lastupdated: "2026-06-25"
 
 keywords: elasticsearch dedicated cores, databases, manual scaling, disk I/O, memory, CPU, elasticsearch resources, elasticsearch scaling
 
@@ -184,6 +184,8 @@ The `hostflavor` parameter defines your compute sizing. Gen 2 uses Isolated Comp
 {: caption="Gen 2 host flavor sizing parameter" caption-side="bottom"}
 {: #table-host-flavor}
 
+For information about flex and fixed profiles, see [Gen2 Isolate Compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=cli#isolated-compute-sizing).
+
 ## Review current resources and hosting model
 {: #review-resources-api}
 {: api}
@@ -243,6 +245,8 @@ The `host_flavor` parameter defines your compute sizing. Gen 2 uses Isolated Com
 | 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
 {: caption="Table 1 Gen 2 host flavor sizing parameter" caption-side="bottom"}
+
+For information about flex and fixed profiles, see [Gen2 Isolate Compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=api#isolated-compute-sizing).
 
 ## Review current resources and hosting model
 {: #review-resources-terraform}
@@ -314,6 +318,8 @@ The `host_flavor` parameter defines your compute sizing. To provision a Shared C
 | 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
 | 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
 {: caption="Gen 2 host flavor sizing parameter" caption-side="bottom"}
+
+For information about flex and fixed profiles, see [Gen2 Isolate Compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=terraform#isolated-compute-sizing).
 
 Autoscaling is not currently available on {{site.data.keyword.databases-for}} Gen 2. Monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
