@@ -25,6 +25,7 @@ toc:
       - include: ../cloud-databases-gen2/overview.md
       - include: ../cloud-databases-gen2/isolated-compute.md
       - learn-dashboard-overview.md
+      - release-notes.md
       - link:
           label: Gen 1 docs
           href: https://cloud.ibm.com/docs/databases-for-elasticsearch
