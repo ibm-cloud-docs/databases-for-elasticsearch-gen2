@@ -24,7 +24,7 @@
       },
       {
         "title": "Pricing",
-        "href": "/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-pricing"
+        "href": "/docs/cloud-databases-gen2?topic=cloud-databases-gen2-pricing"
       },
       {
         "title": "Gen 1 docs",
@@ -51,10 +51,10 @@
     "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/database"
   },
   "section_updates": {
-    "view_more": "/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-elasticsearch-relnotes",
+    "view_more": "/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-elastic-offerings",
     "tiles": [
       {
-        "date": "March 2026",
+        "date": "June 2026",
         "title": "GA of Databases for Elasticsearch Gen 2"
       }
     ]
