@@ -33,6 +33,8 @@ toc:
       id: howto
       topics:
       - howto-provisioning.md
+      - include: ../cloud-databases-gen2/backup-restore.md
+      - include: ../cloud-databases-gen2/coupled-backups.md
       - howto-user-management.md
       - howto-getting-connection-strings.md
       - include: ../cloud-databases-gen2/ha-dr.md
