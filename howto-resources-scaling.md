@@ -60,7 +60,7 @@ If you find that your database workloads need more CPU resources, you can scale 
 - Disk cannot be scaled down.
 - Scaling to a different Isolated Compute size moves your deployment to new hosts. Your databases are restarted as part of that move.
 - Drastically scaling up CPU, RAM, or disk can take longer to run than small resource increases to account for provisioning more underlying hardware resources.
-- Scaling operations are logged in [{{site.data.keyword.atracker_full}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at-events).
+- Scaling operations are logged in [{{site.data.keyword.atracker_full}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events).
 - Autoscaling is not currently available on Gen 2. Monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-monitoring).
 - Horizontal scaling (adding nodes) is not currently available on Gen 2.
 
@@ -90,7 +90,7 @@ After you are done, click *Apply changes"* to trigger the scaling operation.
 {: #review-resources-cli}
 {: cli}
 
-[{{site.data.keyword.cloud_notm}} CLI cloud databases plug-in](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cli) supports viewing and scaling the resources on your deployment. Use the `cdb deployment-groups` command to see current resource information for your service, including which resource groups are adjustable. To scale any of the available resource groups, use the `cdb deployment-groups-set` command.
+[{{site.data.keyword.cloud_notm}} CLI cloud databases plug-in](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference) supports viewing and scaling the resources on your deployment. Use the `cdb deployment-groups` command to see current resource information for your service, including which resource groups are adjustable. To scale any of the available resource groups, use the `cdb deployment-groups-set` command.
 
 For example, with the following command you can view the resource groups for a deployment named "example-deployment":
 

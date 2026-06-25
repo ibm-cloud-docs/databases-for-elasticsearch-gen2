@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2026
-lastupdated: "2026-06-09"
+lastupdated: "2026-06-25"
 
 keywords: elasticsearch, databases, admin user, service credentials, ops manager, elasticsearch managing users, roles, root account
 
@@ -16,7 +16,7 @@ subcollection: databases-for-elasticsearch-gen2
 
 {{site.data.keyword.databases-for-elasticsearch}} deployments come with authentication enabled and use Elasticsearch's [Built-in users](https://www.elastic.co/guide/en/elasticsearch/reference/7.17/built-in-users.html){: external}.
 
-Add users in the UI using the _Service credentials_ page, with the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#users), or the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#createdatabaseuser).
+Add users in the UI using the _Service credentials_ page, with the [{{site.data.keyword.databases-for}} CLI plug-in](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference), or the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#createdatabaseuser).
 
 User management procedures for Gen2 VPC architecture have been reviewed and updated for compatibility with VPC-based deployments. Ensure that you follow IAM integration and security best practices.
 {: note}
@@ -105,7 +105,7 @@ ibmcloud cdb user-create example-deployment <newusername> <newpassword>
 ```
 {: pre}
 
-When the task finishes, retrieve the new user's connection strings with the [`ibmcloud cdb deployment-connections`](/docs/databases-cli-plugin?topic=databases-cli-plugin-cdb-reference#deployment-connections){: external} command, which looks like:
+When the task finishes, retrieve the new user's connection strings with the [`ibmcloud cdb deployment-connections`](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-cdb-reference){: external} command, which looks like:
 
 ```sh
 ibmcloud cdb deployment-connections [--user <userid>] [--password <password>] [--endpoint-type <endpoint type>] [--all] [--only] [--start] [--certroot <path>] [--json]
