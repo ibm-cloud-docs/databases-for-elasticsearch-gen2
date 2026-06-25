@@ -20,9 +20,9 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-elasticsearch_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
 
-## 25 June 2026
+## 26 June 2026
 {: #databases-for-elasticsearch-26june2026}
 {: release-note}
 
 {{site.data.keyword.databases-for-elasticsearch}} Gen 2 is now generally available (GA)
-:  {{site.data.keyword.databases-for-elasticsearch}} Gen 2 is now available, offering enhanced performance, improved scalability, and better resource isolation. To find out more, see [Plan overview](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-elastic-offerings&interface=ui) and [Overview of Gen 1 (Classic) and Gen 2 (VPC)](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-overview-gen1-gen2&interface=ui)
+:  {{site.data.keyword.databases-for-elasticsearch}} Gen 2 is now available, offering enhanced performance, improved scalability, and better resource isolation. To find out more, see [Plan overview](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-elastic-offerings&interface=ui) and [Overview of Gen 1 (Classic) and Gen 2 (VPC)](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-overview-gen1-gen2&interface=ui).
