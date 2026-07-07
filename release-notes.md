@@ -21,7 +21,7 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: shortdesc}
 
 ## 6 July 2026
-{: #databases-for-elasticsearch-06july2026}
+{: #databases-for-elasticsearch-06jul2026}
 {: release-note}
 
 {{site.data.keyword.databases-for-elasticsearch}} Gen 2 is now generally available (GA)
