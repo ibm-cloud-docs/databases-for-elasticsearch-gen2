@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2018, 2026
-lastupdated: "2026-06-25"
+  years: 2026
+lastupdated: "2026-08-17"
 
 keywords: elasticsearch connection strings, databases, elasticsearch service credentials
 
@@ -70,7 +70,7 @@ curl -X GET -H "Authorization: Bearer $APIKEY" 'https://api.{region}.databases.c
 
 Access to your {{site.data.keyword.databases-for-elasticsearch}} deployment is not limited to the admin user. You can create users by using the _Service Credentials_ page, the {{site.data.keyword.IBM_notm}} Cloud CLI, or through the {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} API.
 
-All users on your deployment can use the connection strings, including connection strings for either public or private endpoints.
+All users on your deployment can use the connection strings for the private endpoints.
 
 ### Creating users from the UI
 {: #connection-strings-creating-users-service-cred-ui}
