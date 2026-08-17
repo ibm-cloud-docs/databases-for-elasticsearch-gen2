@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-06-25"
+lastupdated: "2026-08-17"
 
 keywords: elasticsearch dedicated cores, databases, manual scaling, disk I/O, memory, CPU, elasticsearch resources, elasticsearch scaling
 
@@ -33,7 +33,7 @@ Billing is based on the _total_ resources that are allocated to the deployment.
 ### Disk usage
 {: #resources-scaling-disk-usage}
 
-Storage shows the amount of disk space that is allocated to your service. Each member gets an equal share of the allocated space. Your data is replicated across all the data members in the Elasticsearch cluster.
+Storage shows the amount of disk space that is allocated to your service. Each member gets an equal share of the allocated space. Data can be replicated across data members in the Elasticsearch cluster, depending on your index and shard replica configuration.
 
 Disk allocation also affects the performance of the disk, with larger disks having higher performance. Baseline input/output operations per second (IOPS) performance for disk is 10 IOPS for each GB. Scale disk to increase the IOPS that your deployment can handle.
 
@@ -55,10 +55,10 @@ If you find that your database workloads need more CPU resources, you can scale 
 ## Scaling considerations
 {: #resources-scaling-consider}
 
-- Scaling up might cause your deployment to restart. If your deployment needs to be moved to a host with more capacity, the deployment is restarted as part of the move.
+- Scaling up might cause your deployment to restart. If your deployment needs to be moved to a host with more capacity, nodes in the deployment are restarted on a rolling basis.
 - Scaling down RAM or CPU does not trigger restarts.
 - Disk cannot be scaled down.
-- Scaling to a different Isolated Compute size moves your deployment to new hosts. Your databases are restarted as part of that move.
+- Scaling to a different Isolated Compute size moves your deployment to new hosts. Nodes in the deployment are restarted on a rolling basis.
 - Drastically scaling up CPU, RAM, or disk can take longer to run than small resource increases to account for provisioning more underlying hardware resources.
 - Scaling operations are logged in [{{site.data.keyword.atracker_full}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events).
 - Autoscaling is not currently available on Gen 2. Monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-monitoring).
