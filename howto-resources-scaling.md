@@ -6,7 +6,7 @@ lastupdated: "2026-08-25"
 
 keywords: elasticsearch dedicated cores, databases, manual scaling, disk I/O, memory, CPU, elasticsearch resources, elasticsearch scaling
 
-subcollection: databases-for-elasticsearch-gen2-gen2
+subcollection: databases-for-elasticsearch-gen2
 
 ---
 
@@ -17,7 +17,7 @@ subcollection: databases-for-elasticsearch-gen2-gen2
 
 You can manually adjust the resources available to your {{site.data.keyword.databases-for-elasticsearch_full}} Gen 2 deployment to suit your workload and the size of your data.
 
-To scale an [Isolated Compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute) instance, set the relevant `host_flavor` parameter to the Isolated Compute size you're targeting, such as "b3c.4x16.encrypted". The host flavor selection includes both CPU and RAM allocation, so do not separately select CPU and RAM.
+To scale an [isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute) instance, set the relevant `host_flavor` parameter to the isolated compute size you're targeting, such as "b3c.4x16.encrypted". The host flavor selection includes both CPU and RAM allocation, so do not separately select CPU and RAM.
 
 **Gen 2 VPC Architecture**: All scaling procedures have been validated for VPC-based deployments. Scaling operations maintain VPC connectivity and do not require reconfiguration of Virtual Private Endpoints (VPE).
 {: note}
@@ -43,14 +43,14 @@ You cannot scale down storage. If your data set size has decreased, you can reco
 ### RAM
 {: #resources-scaling-ram}
 
-If you find that your queries and database activity suffer from performance issues because of a lack of memory, you can scale the amount of RAM allocated to your service. Gen 2 uses Isolated Compute, so select the CPU x RAM configuration that matches your resource needs.
+If you find that your queries and database activity suffer from performance issues because of a lack of memory, you can scale the amount of RAM allocated to your service. Gen 2 uses isolated compute, so select the CPU x RAM configuration that matches your resource needs.
 
 Adding memory to the total allocation adds memory to the members equally. {{site.data.keyword.databases-for-elasticsearch}} deployments have their memory allocation policy set at 50% heap and 50% system memory, so increasing the amount of RAM increases both heap and system memory. RAM can be scaled up or down.
 
 ### vCPU
 {: #resources-scaling-cpu}
 
-If you find that your database workloads need more CPU resources, you can scale the amount of CPU allocated to your service. Gen 2 uses Isolated Compute, so select the CPU x RAM configuration that matches your resource needs.
+If you find that your database workloads need more CPU resources, you can scale the amount of CPU allocated to your service. Gen 2 uses isolated compute, so select the CPU x RAM configuration that matches your resource needs.
 
 ## Scaling considerations
 {: #resources-scaling-consider}
@@ -58,7 +58,7 @@ If you find that your database workloads need more CPU resources, you can scale 
 - Scaling up might cause your deployment to restart. If your deployment needs to be moved to a host with more capacity, nodes in the deployment are restarted on a rolling basis.
 - Scaling down RAM or CPU does not trigger restarts.
 - Disk cannot be scaled down.
-- Scaling to a different Isolated Compute size moves your deployment to new hosts. Nodes in the deployment are restarted on a rolling basis.
+- Scaling to a different isolated compute size moves your deployment to new hosts. Nodes in the deployment are restarted on a rolling basis.
 - Drastically scaling up CPU, RAM, or disk can take longer to run than small resource increases to account for provisioning more underlying hardware resources.
 - Scaling operations are logged in [{{site.data.keyword.atracker_full}}](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-at_events).
 - Autoscaling is not currently available on Gen 2. Monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-monitoring).
@@ -147,11 +147,11 @@ ibmcloud cdb deployment-groups-set example-deployment member --memory 12288
 ```
 {: pre}
 
-## Scaling Isolated Compute in the CLI
+## Scaling isolated compute in the CLI
 {: #resources-switching-cli}
 {: cli}
 
-For Gen 2 Isolated Compute instances, memory and CPU are adjusted together by selecting the Isolated Compute size (see all sizes in [Gen 2 host flavor sizing parameter](#table-host-flavor)). Disk is scaled separately.
+For Gen 2 isolated compute instances, memory and CPU are adjusted together by selecting the isolated compute size (see all sizes in [Gen 2 host flavor sizing parameter](#table-host-flavor)). Disk is scaled separately.
 
 Because the host flavor selection includes CPU and RAM sizes (`b3c.4x16.encrypted` is 4 CPU and 16 RAM), this request does not accept both an Isolated size selection and separate CPU and RAM allocation selections.
 
@@ -160,7 +160,7 @@ ibmcloud cdb deployment-groups-set <deploymentid> <groupid> [--disk <val>] [--ho
 ```
 {: pre}
 
-For example, use the following to scale to an Isolated Compute instance or scale up your Isolated Compute instance:
+For example, use the following to scale to an isolated compute instance or scale up your isolated compute instance:
 
 ```sh
 ibmcloud cdb deployment-groups-set crn:abc ... xyz:: member  --hostflavor b3c.8x32.encrypted
@@ -171,7 +171,7 @@ ibmcloud cdb deployment-groups-set crn:abc ... xyz:: member  --hostflavor b3c.8x
 {: #host-flavor-parameter-cli}
 {: cli}
 
-The `hostflavor` parameter defines your compute sizing. Gen 2 uses Isolated Compute with flex and fixed profiles, see [Gen2 Isolate Compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=cli#isolated-compute-sizing).
+The `hostflavor` parameter defines your compute sizing. Gen 2 uses isolated compute with flex and fixed profiles, see [Gen2 isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=cli#isolated-compute-sizing).
 
 ## Review current resources and hosting model
 {: #review-resources-api}
@@ -207,7 +207,7 @@ curl -X PATCH 'https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{
 {: #resources-hosting-determine-api}
 {: api}
 
-Use the following command to review the value of the `host_flavor` attribute. This will be null if the database is on a deprecated hosting model (not Shared or Isolated Compute).
+Use the following command to review the value of the `host_flavor` attribute. This will be null if the database is on a deprecated hosting model (not Shared or isolated compute).
 
 ```sh
 curl -X GET https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/groups -H 'Authorization: Bearer <>'
@@ -221,13 +221,13 @@ Autoscaling is not currently available on {{site.data.keyword.databases-for}} Ge
 {: #host-flavor-parameter-api}
 {: api}
 
-The `hostflavor` parameter defines your compute sizing. Gen 2 uses Isolated Compute with flex and fixed profiles, see [Gen2 Isolate Compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=cli#isolated-compute-sizing).
+The `hostflavor` parameter defines your compute sizing. Gen 2 uses isolated compute with flex and fixed profiles, see [Gen 2 isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=cli#isolated-compute-sizing).
 
 ## Review current resources and hosting model
 {: #review-resources-terraform}
 {: terraform}
 
-Review resource allocations to your database by checking your terraform scripts for `host_flavor`, and `disk { allocation_mb = }`. Gen 2 uses Isolated Compute exclusively.
+Review resource allocations to your database by checking your terraform scripts for `host_flavor`, and `disk { allocation_mb = }`. Gen 2 uses isolated compute exclusively.
 
 ## Scaling with Terraform
 {: #resources-scaling-terraform}
@@ -281,7 +281,7 @@ Alternatively, you can use pre-built, open-source, and enterprise-ready [Terrafo
 {: #host-flavor-parameter-terraform}
 {: terraform}
 
-The `hostflavor` parameter defines your compute sizing. Gen 2 uses Isolated Compute with flex and fixed profiles, see [Gen2 Isolate Compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=cli#isolated-compute-sizing).
+The `hostflavor` parameter defines your compute sizing. Gen 2 uses isolated compute with flex and fixed profiles, see [Gen 2 isolated compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=cli#isolated-compute-sizing).
 
 Autoscaling is not currently available on {{site.data.keyword.databases-for}} Gen 2. Monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
