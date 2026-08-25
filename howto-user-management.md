@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2019, 2026
-lastupdated: "2026-08-17"
+  years: 2026
+lastupdated: "2026-08-24"
 
 keywords: elasticsearch, databases, admin user, service credentials, ops manager, elasticsearch managing users, roles, root account
 
@@ -21,53 +21,12 @@ Add users in the UI using the _Service credentials_ page, with the [{{site.data.
 User management procedures for Gen2 VPC architecture have been reviewed and updated for compatibility with VPC-based deployments. Ensure that you follow IAM integration and security best practices.
 {: note}
 
-## The admin user
-{: #user-management-admin-user}
-
-When you provision a {{site.data.keyword.databases-for-elasticsearch}} deployment, an `admin` user is automatically created.
-
-Set the admin password before using it to connect.
-{: important}
-
-### Setting the Admin password in the UI
-{: #user-management-set-admin-password-ui}
-{: ui}
-
-Set your Admin password through the UI by selecting your instance from the [Resource list](https://cloud.ibm.com/resources){: external}. On the dashboard, select the **Settings** tab, then either enter or generate a new admin password and click the *Change password* button.
-
-### Setting the Admin password in the CLI
-{: #user-management-set-admin-password-cli}
-{: cli}
-
-Use the `cdb user-password` command from the {{site.data.keyword.cloud_notm}} CLI {{site.data.keyword.databases-for}} plug-in to set the admin password.
-
-For example, to set the admin password for a deployment named `example-deployment`, use the following command:
-
-```sh
-ibmcloud cdb user-password example-deployment admin <newpassword>
-```
-{: pre}
-
-### Setting the Admin password in the API
-{: #user-management-set-admin-password-api}
-{: api}
-
-The *Foundation endpoint* that is shown on the *Overview* panel in the Deployment details section of your service provides the base URL to access this deployment using the API. Use it with the [Set specified user's password](/apidocs/cloud-databases-api/cloud-databases-api-v5#updateuser){: external} endpoint to set the admin password.
-
-```sh
-curl -X PATCH 'https://api.{region}.databases.cloud.ibm.com/v5/ibm/deployments/{id}/users/admin' \
--H "Authorization: Bearer $APIKEY" \
--H "Content-Type: application/json" \
--d '{"password":"newrootpasswordsupersecure21"}'
-```
-{: pre}
-
-## The `ibm_superuser` role
+## The `ibm_admin_role` role
 {: #user-management-elasticsearch-ibm-superuser}
 
-For Elasticsearch versions 7.17.7 and later, all users, both new and existing, including the `admin` user, will be assigned the `ibm_superuser` role. The `ibm_superuser` role has the same privileges as `superuser`, except the `ibm_superuser` role cannot access hidden, internal, or restricted indexes. Restricting access to hidden indexes prevents users from inadvertently limiting their own access by closing security indexes.
+In {{site.data.keyword.databases-for-elasticsearch}} Gen 2, the `ibm_superuser` role has been replaced with `ibm_admin_role`. All users created through service credentials are automatically assigned the `ibm_admin_role`. You can use these users to create additional users directly through the {{site.data.keyword.databases-for-elasticsearch}} cluster endpoints.
 
-Although you have the permissions to change this role back to the original `superuser`, you should not do so. Changing `ibm_superuser` to `superuser` disrupts your access to your Elasticsearch deployment.
+Do not update or replace the `ibm_admin_role` assignment. Changing it disrupts your access to your {{site.data.keyword.databases-for-elasticsearch}} deployment.
 {: important}
 
 ## Managing users and roles through the UI

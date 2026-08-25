@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2026
-lastupdated: "2026-06-23"
+lastupdated: "2026-08-25"
 
 keywords: connecting elasticsearch, databases, curl
 
@@ -33,7 +33,7 @@ Before connecting with cURL:
 If you experience connectivity issues, see [Troubleshooting connections](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-troubleshoot-connect&interface=ui).
 {: note}
 
-![CLI Endpoints panel](images/cli-endpoints-pane.png){: caption="Endpoints section, CLI tab" caption-side="bottom"}
+![CLI Endpoints panel](images/cli-endpoints-pane.svg){: caption="Endpoints section, CLI tab" caption-side="bottom"}
 
 The information that you need to make a connection with cURL to your deployment is also in the "CLI" section of a credential created on the *Service credentials* page. The table contains a breakdown for reference.
 

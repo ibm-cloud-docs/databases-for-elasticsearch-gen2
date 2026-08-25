@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 870" width="1400" height="870" font-family="-apple-system, 'Segoe UI', system-ui, sans-serif">
+
+  <!-- White background -->
+  <rect width="1400" height="870" fill="#ffffff"/>
+
+  <!-- ── Service endpoints heading ── -->
+  <text x="24" y="38" font-size="22" font-weight="600" fill="#161616">Service endpoints</text>
+
+  <!-- Tab bar -->
+  <rect x="0" y="52" width="1400" height="1" fill="#e0e0e0"/>
+  <!-- Elasticsearch tab -->
+  <rect x="0" y="53" width="130" height="38" fill="#f4f4f4" rx="0"/>
+  <text x="65" y="77" font-size="14" fill="#525252" text-anchor="middle">Elasticsearch</text>
+  <!-- CLI tab (active) -->
+  <rect x="130" y="53" width="70" height="38" fill="#ffffff" rx="0"/>
+  <text x="165" y="77" font-size="14" fill="#161616" text-anchor="middle">CLI</text>
+  <rect x="130" y="88" width="70" height="3" fill="#0f62fe"/>
+
+  <!-- ── Grey panel ── -->
+  <rect x="0" y="105" width="1400" height="490" fill="#f4f4f4"/>
+
+  <!-- Private endpoints only badge -->
+  <rect x="24" y="130" width="168" height="28" rx="14" fill="#ffd6e8"/>
+  <text x="108" y="149" font-size="12" fill="#9f1853" text-anchor="middle">Private endpoints only</text>
+
+  <!-- Private connection tutorial link (top-right) -->
+  <text x="1250" y="149" font-size="13" fill="#0f62fe">Private connection tutorial</text>
+  <!-- external link icon (simple) -->
+  <rect x="1368" y="138" width="10" height="10" rx="1" fill="none" stroke="#0f62fe" stroke-width="1.2"/>
+  <polyline points="1373,138 1378,138 1378,143" fill="none" stroke="#0f62fe" stroke-width="1.2"/>
+  <line x1="1372" y1="144" x2="1378" y2="138" stroke="#0f62fe" stroke-width="1.2"/>
+
+  <!-- CLI endpoint label -->
+  <text x="24" y="200" font-size="13" fill="#525252">CLI endpoint</text>
+
+  <!-- CLI endpoint text box -->
+  <rect x="24" y="210" width="1352" height="46" rx="2" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="42" y="238" font-size="13" fill="#161616" font-family="'IBM Plex Mono', 'Courier New', monospace">curl -u $ESUSER:$ESPASSWORD  https://d2d6b7c6-31f3-476d-8987-b11c551e9990.private.uhp.ca-mon.elasticsearch.dataservices.appdomain.cloud:9200</text>
+  <!-- Copy icon -->
+  <rect x="1345" y="222" width="18" height="18" rx="2" fill="none" stroke="#525252" stroke-width="1.2"/>
+  <rect x="1349" y="218" width="18" height="18" rx="2" fill="#ffffff" stroke="#525252" stroke-width="1.2"/>
+
+  <!-- Binary / Arguments labels -->
+  <text x="24" y="295" font-size="13" fill="#525252">Binary</text>
+  <text x="710" y="295" font-size="13" fill="#525252">Arguments</text>
+
+  <!-- Binary box -->
+  <rect x="24" y="305" width="660" height="46" rx="2" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="42" y="333" font-size="13" fill="#161616" font-family="'IBM Plex Mono', 'Courier New', monospace">curl</text>
+  <!-- Copy icon binary -->
+  <rect x="655" y="319" width="16" height="16" rx="2" fill="none" stroke="#525252" stroke-width="1.2"/>
+  <rect x="659" y="315" width="16" height="16" rx="2" fill="#ffffff" stroke="#525252" stroke-width="1.2"/>
+
+  <!-- Arguments box -->
+  <rect x="710" y="305" width="666" height="46" rx="2" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="728" y="333" font-size="13" fill="#161616" font-family="'IBM Plex Mono', 'Courier New', monospace">-u $ESUSER:$ESPASSWORD  https://d2d6b7c6-31f3-476d-8987-b11c551e9990.private.u…</text>
+  <!-- Copy icon arguments -->
+  <rect x="1348" y="319" width="16" height="16" rx="2" fill="none" stroke="#525252" stroke-width="1.2"/>
+  <rect x="1352" y="315" width="16" height="16" rx="2" fill="#ffffff" stroke="#525252" stroke-width="1.2"/>
+
+  <!-- Environment label -->
+  <text x="24" y="390" font-size="13" fill="#525252">Environment</text>
+
+  <!-- Environment box -->
+  <rect x="24" y="400" width="1352" height="90" rx="2" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="42" y="424" font-size="13" fill="#161616" font-family="'IBM Plex Mono', 'Courier New', monospace">ELASTIC_HOSTS=https://d2d6b7c6-31f3-476d-8987-b11c551e9990.private.uhp.ca-mon.elasticsearch.dataservices.appdomain.cloud:9200</text>
+  <text x="42" y="444" font-size="13" fill="#161616" font-family="'IBM Plex Mono', 'Courier New', monospace">ELASTIC_PASSWORD=$ESPASSWORD</text>
+  <text x="42" y="464" font-size="13" fill="#161616" font-family="'IBM Plex Mono', 'Courier New', monospace">ELASTIC_USERNAME=$ESUSER</text>
+  <!-- Copy icon env -->
+  <rect x="1345" y="438" width="18" height="18" rx="2" fill="none" stroke="#525252" stroke-width="1.2"/>
+  <rect x="1349" y="434" width="18" height="18" rx="2" fill="#ffffff" stroke="#525252" stroke-width="1.2"/>
+
+  <!-- Info note -->
+  <!-- Circle-i icon -->
+  <circle cx="36" cy="564" r="9" fill="none" stroke="#525252" stroke-width="1.2"/>
+  <text x="36" y="568" font-size="11" fill="#525252" text-anchor="middle" font-weight="700">i</text>
+  <text x="52" y="568" font-size="13" fill="#525252">Gen 2 uses Let's Encrypt certificates instead of TLS certificates.</text>
+
+  <!-- ── Bottom two-column section ── -->
+  <!-- Left card: Observability -->
+  <rect x="0" y="615" width="694" height="255" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="24" y="655" font-size="16" font-weight="600" fill="#161616">Observability</text>
+  <text x="24" y="678" font-size="13" fill="#525252">Optimize log analysis and management for rapid issue resolution and proactively avoid downtime.</text>
+  <!-- IBM Cloud Logs link -->
+  <text x="24" y="718" font-size="13" fill="#0f62fe">IBM Cloud Logs</text>
+  <rect x="116" y="708" width="10" height="10" rx="1" fill="none" stroke="#0f62fe" stroke-width="1.2"/>
+  <polyline points="121,708 126,708 126,713" fill="none" stroke="#0f62fe" stroke-width="1.2"/>
+  <line x1="120" y1="714" x2="126" y2="708" stroke="#0f62fe" stroke-width="1.2"/>
+
+  <text x="24" y="756" font-size="13" fill="#525252">Offers visibility into the performance and health of your infrastructure and apps, with in-depth</text>
+  <text x="24" y="774" font-size="13" fill="#525252">troubleshooting and alerting.</text>
+  <!-- IBM Cloud Monitoring link -->
+  <text x="24" y="808" font-size="13" fill="#0f62fe">IBM Cloud Monitoring</text>
+  <rect x="145" y="798" width="10" height="10" rx="1" fill="none" stroke="#0f62fe" stroke-width="1.2"/>
+  <polyline points="150,798 155,798 155,803" fill="none" stroke="#0f62fe" stroke-width="1.2"/>
+  <line x1="149" y1="804" x2="155" y2="798" stroke="#0f62fe" stroke-width="1.2"/>
+
+  <!-- Right card: Most recent task -->
+  <rect x="700" y="615" width="700" height="255" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="724" y="655" font-size="16" font-weight="600" fill="#161616">Most recent task</text>
+
+  <!-- Divider -->
+  <line x1="700" y1="672" x2="1400" y2="672" stroke="#e0e0e0" stroke-width="1"/>
+
+  <!-- Task row -->
+  <text x="724" y="710" font-size="14" fill="#161616">Provision completed successfully</text>
+  <!-- Green check circle -->
+  <circle cx="985" cy="705" r="9" fill="#24a148"/>
+  <polyline points="980,705 984,709 991,700" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+  <text x="1000" y="710" font-size="14" fill="#525252">Completed</text>
+  <text x="1320" y="710" font-size="14" fill="#525252">52 days ago</text>
+
+  <!-- Divider bottom -->
+  <line x1="700" y1="730" x2="1400" y2="730" stroke="#e0e0e0" stroke-width="1"/>
+
+  <!-- Learn how row -->
+  <text x="724" y="764" font-size="13" fill="#525252">Learn how to track more events in your instance</text>
+  <!-- Chevron down -->
+  <polyline points="1375,756 1382,763 1389,756" fill="none" stroke="#525252" stroke-width="1.8"/>
+
+</svg>

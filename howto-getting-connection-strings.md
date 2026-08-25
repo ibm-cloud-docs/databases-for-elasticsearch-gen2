@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-08-17"
+lastupdated: "2026-08-25"
 
 keywords: elasticsearch connection strings, databases, elasticsearch service credentials
 
@@ -15,9 +15,9 @@ subcollection: databases-for-elasticsearch-gen2
 # Getting connection strings
 {: #connection-strings}
 
-To connect to {{site.data.keyword.databases-for-elasticsearch_full}}, you need some users and connection strings. Connection strings for your deployment are displayed on the _Overview_ page, in the _Endpoints_ panel. These strings can be used with any set of credentials that you generate.
+To connect to {{site.data.keyword.databases-for-elasticsearch_full}}, you need some users and connection strings. Connection strings for your deployment are displayed on the _Overview_ page, in the _Service Endpoints_ panel. These strings can be used with any set of credentials that you generate.
 
-![Endpoints panel](images/getting-started-endpoints-panel.png){: caption="Endpoints panel" caption-side="bottom"}
+![Endpoints panel](images/getting-started-endpoints-panel.svg){: caption="Endpoints panel" caption-side="bottom"}
 
 **{{site.data.keyword.databases-for-elasticsearch}} Gen2 uses private endpoints only.** All service credentials are configured for private endpoint access within VPC. You must have VPC connectivity configured through Virtual Private Endpoints (VPE) to connect to your deployment.
 {: important}

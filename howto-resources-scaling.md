@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2026
-lastupdated: "2026-08-17"
+lastupdated: "2026-08-25"
 
 keywords: elasticsearch dedicated cores, databases, manual scaling, disk I/O, memory, CPU, elasticsearch resources, elasticsearch scaling
 
@@ -171,20 +171,7 @@ ibmcloud cdb deployment-groups-set crn:abc ... xyz:: member  --hostflavor b3c.8x
 {: #host-flavor-parameter-cli}
 {: cli}
 
-The `hostflavor` parameter defines your compute sizing. Gen 2 uses Isolated Compute with the following available sizes:
-
-| **Host flavor** | **hostflavor value** |
-|:-------------------------:|:---------------------:|
-| 4 CPU x 16 RAM            | `b3c.4x16.encrypted`    |
-| 8 CPU x 32 RAM            | `b3c.8x32.encrypted`    |
-| 8 CPU x 64 RAM            | `m3c.8x64.encrypted`    |
-| 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
-| 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
-| 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
-{: caption="Gen 2 host flavor sizing parameter" caption-side="bottom"}
-{: #table-host-flavor}
-
-For information about flex and fixed profiles, see [Gen2 Isolate Compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=cli#isolated-compute-sizing).
+The `hostflavor` parameter defines your compute sizing. Gen 2 uses Isolated Compute with flex and fixed profiles, see [Gen2 Isolate Compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=cli#isolated-compute-sizing).
 
 ## Review current resources and hosting model
 {: #review-resources-api}
@@ -234,19 +221,7 @@ Autoscaling is not currently available on {{site.data.keyword.databases-for}} Ge
 {: #host-flavor-parameter-api}
 {: api}
 
-The `host_flavor` parameter defines your compute sizing. Gen 2 uses Isolated Compute with the following available sizes:
-
-| **Host flavor** | **host_flavor value** |
-|:-------------------------:|:---------------------:|
-| 4 CPU x 16 RAM            | `b3c.4x16.encrypted`    |
-| 8 CPU x 32 RAM            | `b3c.8x32.encrypted`    |
-| 8 CPU x 64 RAM            | `m3c.8x64.encrypted`    |
-| 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
-| 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
-| 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
-{: caption="Table 1 Gen 2 host flavor sizing parameter" caption-side="bottom"}
-
-For information about flex and fixed profiles, see [Gen2 Isolate Compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=api#isolated-compute-sizing).
+The `hostflavor` parameter defines your compute sizing. Gen 2 uses Isolated Compute with flex and fixed profiles, see [Gen2 Isolate Compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=cli#isolated-compute-sizing).
 
 ## Review current resources and hosting model
 {: #review-resources-terraform}
@@ -306,20 +281,7 @@ Alternatively, you can use pre-built, open-source, and enterprise-ready [Terrafo
 {: #host-flavor-parameter-terraform}
 {: terraform}
 
-The `host_flavor` parameter defines your compute sizing. To provision a Shared Compute instance, specify `multitenant`. To provision an Isolated Compute instance, input the appropriate value for your desired CPU and RAM configuration.
-
-| **Host flavor** | **host_flavor value** |
-|:-------------------------:|:---------------------:|
-| Shared Compute            | `multitenant`    |
-| 4 CPU x 16 RAM            | `b3c.4x16.encrypted`    |
-| 8 CPU x 32 RAM            | `b3c.8x32.encrypted`    |
-| 8 CPU x 64 RAM            | `m3c.8x64.encrypted`    |
-| 16 CPU x 64 RAM           | `b3c.16x64.encrypted`   |
-| 32 CPU x 128 RAM          | `b3c.32x128.encrypted`  |
-| 30 CPU x 240 RAM          | `m3c.30x240.encrypted`  |
-{: caption="Gen 2 host flavor sizing parameter" caption-side="bottom"}
-
-For information about flex and fixed profiles, see [Gen2 Isolate Compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=terraform#isolated-compute-sizing).
+The `hostflavor` parameter defines your compute sizing. Gen 2 uses Isolated Compute with flex and fixed profiles, see [Gen2 Isolate Compute](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-isolated-compute&interface=cli#isolated-compute-sizing).
 
 Autoscaling is not currently available on {{site.data.keyword.databases-for}} Gen 2. Monitor your resources using [{{site.data.keyword.monitoringfull}} integration](/docs/cloud-databases-gen2?topic=cloud-databases-gen2-monitoring), which provides metrics for memory, disk space, and disk I/O utilization. To add resources to your instance, manually scale your deployment.
 {: note}
