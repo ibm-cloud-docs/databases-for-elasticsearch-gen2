@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-08-25"
+lastupdated: "2026-08-28"
 
 keywords: elasticsearch connection strings, databases, elasticsearch service credentials
 
@@ -22,7 +22,7 @@ To connect to {{site.data.keyword.databases-for-elasticsearch_full}}, you need s
 **{{site.data.keyword.databases-for-elasticsearch}} Gen2 uses private endpoints only.** All service credentials are configured for private endpoint access within VPC. You must have VPC connectivity configured through Virtual Private Endpoints (VPE) to connect to your deployment.
 {: important}
 
-A {{site.data.keyword.databases-for-elasticsearch}} deployment is provisioned with an admin user, and after you [set the admin password](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-user-management&interface=ui#user-management-set-admin-password-ui), you can use its credentials to connect to your deployment.
+A {{site.data.keyword.databases-for-elasticsearch}} deployment is provisioned with an admin user, and after you [set the admin password](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-user-management&interface=ui), you can use its credentials to connect to your deployment.
 {: .tip}
 
 ## Getting connection strings in the CLI
@@ -146,8 +146,6 @@ The "https" section of a credential created on the *Service credentials* page co
 | `Authentication` | `Method` | How authentication takes place; "direct" authentication is handled by the driver. |
 | `Hosts` | `0...` | A hostname and port to connect to. |
 | `Composed` | `0...` | A URI combining Scheme, Authentication, Host, and Path. |
-| `Certificate` | `Name` | The allocated name for the service proprietary certificate for database deployment. |
-| `Certificate` | Base64 | A base64 encoded version of the certificate. |
 {: caption="Https/URI connection information" caption-side="top"}
 
 * `0...` indicates that there may be one or more of these entries in an array.
@@ -163,8 +161,6 @@ The "CLI" section of a credential created on the *Service credentials* page cont
 | `Composed` | | A formatted command to establish a connection to your deployment. The command combines the `Bin` executable, `Environment` variable settings, and uses `Arguments` as command-line parameters. |
 | `Environment` | | A list of key/values you set as environment variables. |
 | `Arguments` | 0... | The information that is passed as arguments to the command shown in the Bin field. |
-| `Certificate` | Base64 | A service proprietary certificate that is used to confirm that an application is connecting to the appropriate server. It is base64 encoded. |
-| `Certificate` | Name | The allocated name for the service proprietary certificate. |
 | `Type` | | The type of package that uses this connection information; in this case `cli`. |
 {: caption="curl connection information" caption-side="top"}
 
