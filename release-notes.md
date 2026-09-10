@@ -24,7 +24,9 @@ Use these release notes to learn about the latest updates to {{site.data.keyword
 {: #databases-for-elasticsearch-10sep2026}
 {: release-note}
 
-The {{site.data.keyword.databases-for-mongodb}} Enterprise plan is now available in Madrid (eu-es) and Sydney (au-syd). For more information, see [Overview of Gen 1 and Gen 2](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-overview-gen1-gen2#feature-differentiators).
+{{site.data.keyword.databases-for-elasticsearch}} Gen 2 is now available in multiple regions
+:  The {{site.data.keyword.databases-for-mongodb}} Enterprise plan is now available in Madrid (eu-es) and Sydney (au-syd), in addition to the existing regions Montreal (ca-mon), Chennai - Airtel (in-che), Mumbai (in-mum), Frankfurt (eu-de), and Washington (us-east). For more information, see [Overview of Gen 1 and Gen 2](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-overview-gen1-gen2#feature-differentiators).
+
 
 
 ## 6 July 2026
