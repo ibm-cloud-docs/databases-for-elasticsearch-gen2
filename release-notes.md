@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2026
-lastupdated: "2026-07-07"
+lastupdated: "2026-09-10"
 
 keywords: databases-for-elasticsearch release notes
 
@@ -19,6 +19,15 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-elasticsearch_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+## 10 Sep 2026
+{: #databases-for-elasticsearch-10sep2026}
+{: release-note}
+
+{{site.data.keyword.databases-for-elasticsearch}} Gen 2 is now available in multiple regions
+:  The {{site.data.keyword.databases-for-mongodb}} Enterprise plan is now available in Madrid (eu-es) and Sydney (au-syd), in addition to the existing regions Montreal (ca-mon), Chennai - Airtel (in-che), Mumbai (in-mum), Frankfurt (eu-de), and Washington (us-east). For more information, see [Overview of Gen 1 and Gen 2](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-overview-gen1-gen2#feature-differentiators).
+
+
 
 ## 6 July 2026
 {: #databases-for-elasticsearch-06jul2026}

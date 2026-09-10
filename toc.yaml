@@ -41,7 +41,6 @@ toc:
       - topicgroup:
           label: Connecting to Databases for Elasticsearch
           topics:
-          - connecting-external.md
           - connecting-ibmcloud-app.md
           - connecting-curl.md
       - topicgroup:

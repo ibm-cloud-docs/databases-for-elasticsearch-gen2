@@ -21,10 +21,7 @@ subcollection: databases-for-elasticsearch-gen2
 
 Elasticsearch supports many plug-ins to extend its core functions. {{site.data.keyword.databases-for-elasticsearch_full}} comes with a selection of plug-ins that already enabled on your deployment. Plug-in management is handled by the service, and users cannot install, uninstall, enable, or disable plug-ins.
 
-You can check the plug-ins that are installed in your Elasticsearch cluster by using the `/_nodes/plugins` cluster API endpoint. Example, 
-```sh
-CURL_CA_BUNDLE=certificate.crt curl -u ibm_cloud_es_user:password https://f1b5e4a9-7179-4af2-a795-b7a0d71ec80a.974550db55eb4ec0983f023940bf637f.databases.appdomain.cloud:30909/_nodes/plugins
-```
+You can check the plug-ins that are installed in your Elasticsearch cluster by using the `/_nodes/plugins` cluster API endpoint.
 
 ## Available plug-ins
 {: #avail-plugins}
