@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-06-09"
+lastupdated: "2026-09-15"
 
 keywords: elasticsearch enterprise, elasticsearch platinum, elasticsearch plans, features
 
@@ -14,7 +14,7 @@ subcollection: databases-for-elasticsearch-gen2
 # Plan overview
 {: #elastic-offerings}
 
-{{site.data.keyword.databases-for}} currently offers one Elasticsearch service: {{site.data.keyword.databases-for-elasticsearch}} Enterprise. This plan provides you with a fully managed platform and a scalable Elasticsearch service, allowing you to focus on your applications and data rather than the underlying infrastructure. {{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan deploys the Enterprise license version of Elasticsearch.
+{{site.data.keyword.databases-for}} currently offers two Elasticsearch services: {{site.data.keyword.databases-for-elasticsearch}} Enterprise and {{site.data.keyword.databases-for-elasticsearch}} Standard. These plans provide you with a fully managed platform and a scalable Elasticsearch service, allowing you to focus on your applications and data rather than the underlying infrastructure. {{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan deploys the Enterprise license version of Elasticsearch.
 
 ## {{site.data.keyword.databases-for-elasticsearch}} feature availability and Elastic licensing: before you enable
 {: #elastic-before-enabling}
@@ -55,3 +55,14 @@ The {{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan provides a
 - Monitoring capabilities, including full-stack monitoring across the Elastic Stack.
 - Reporting capabilities, including PDF and PNG reports.
 - Graph capabilities, including graph exploration and analytics.
+
+## {{site.data.keyword.databases-for-elasticsearch}} Standard Plan
+{: #es-standard-plan}
+
+The {{site.data.keyword.databases-for-elasticsearch}} Standard Plan provides the core functionalities of the Elasticsearch service available under an Elastic Basic license, including the following:
+
+- Security capabilities, including Role Based Access Control (RBAC), API key management, native and file-based authentication, and encrypted communications.
+- Data management capabilities, including Index Lifecycle Management (ILM), snapshot and restore APIs, data streams, and data transforms.
+- Alerting capabilities, including Kibana alerting framework support and search threshold rule types.
+- Monitoring capabilities, including stack monitoring and cluster health visibility.
+- Search and analytics capabilities, including full-text search, aggregations, vector search, and runtime fields.
