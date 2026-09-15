@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-06-23"
+lastupdated: "2026-09-15"
 
 keywords: kibana, elasticsearch container, elasticsearch getting started
 
@@ -89,9 +89,11 @@ For detailed VPE setup instructions, see [Connecting through Virtual Private End
 ## Step 1: Choose your plan
 {: #choose_plan}
 
-{{site.data.keyword.databases-for-elasticsearch}} offers Elasticsearch Enterprise with an Enterprise license.
+{{site.data.keyword.databases-for-elasticsearch}} offers Elasticsearch Enterprise with an Enterprise license and Elasticsearch Standard with an Elastic Basic license.
 
 {{site.data.keyword.databases-for-elasticsearch}} **Enterprise** deploys Elasticsearch Enterprise, providing you with a fully managed and scalable Elasticsearch service with enterprise-grade features, allowing you to focus on your applications and data rather than the underlying infrastructure.
+
+{{site.data.keyword.databases-for-elasticsearch}} **Standard** provides the core functionalities of the Elasticsearch service available under an Elastic Basic license.
 
 Platinum license support is not currently available.
 {: note}

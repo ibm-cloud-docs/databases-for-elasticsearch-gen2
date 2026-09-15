@@ -14,7 +14,7 @@ subcollection: databases-for-elasticsearch-gen2
 # Plan overview
 {: #elastic-offerings}
 
-{{site.data.keyword.databases-for}} currently offers two Elasticsearch services: {{site.data.keyword.databases-for-elasticsearch}} Enterprise and {{site.data.keyword.databases-for-elasticsearch}} Standard. These plans provide you with a fully managed platform and a scalable Elasticsearch service, allowing you to focus on your applications and data rather than the underlying infrastructure. {{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan deploys the Enterprise license version of Elasticsearch.
+{{site.data.keyword.databases-for}} currently offers two Elasticsearch services: {{site.data.keyword.databases-for-elasticsearch}} Enterprise and {{site.data.keyword.databases-for-elasticsearch}} Standard. These plans provide you with a fully managed platform and a scalable Elasticsearch service, allowing you to focus on your applications and data rather than the underlying infrastructure. {{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan deploys the Enterprise license version of Elasticsearch. {{site.data.keyword.databases-for-elasticsearch}} is available under an Elastic Basic license.
 
 ## {{site.data.keyword.databases-for-elasticsearch}} feature availability and Elastic licensing: before you enable
 {: #elastic-before-enabling}
@@ -59,7 +59,7 @@ The {{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan provides a
 ## {{site.data.keyword.databases-for-elasticsearch}} Standard Plan
 {: #es-standard-plan}
 
-The {{site.data.keyword.databases-for-elasticsearch}} Standard Plan provides the core functionalities of the Elasticsearch service available under an Elastic Basic license, including the following:
+The {{site.data.keyword.databases-for-elasticsearch}} Standard Plan provides the core functionalities of the Elasticsearch service that are available under an Elastic Basic license, including the following:
 
 - Security capabilities, including Role Based Access Control (RBAC), API key management, native and file-based authentication, and encrypted communications.
 - Data management capabilities, including Index Lifecycle Management (ILM), snapshot and restore APIs, data streams, and data transforms.
