@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-06-09"
+lastupdated: "2026-09-17"
 
 keywords: elasticsearch enterprise, elasticsearch platinum, elasticsearch plans, features
 
@@ -14,7 +14,13 @@ subcollection: databases-for-elasticsearch-gen2
 # Plan overview
 {: #elastic-offerings}
 
+
+
 {{site.data.keyword.databases-for}} currently offers one Elasticsearch service: {{site.data.keyword.databases-for-elasticsearch}} Enterprise. This plan provides you with a fully managed platform and a scalable Elasticsearch service, allowing you to focus on your applications and data rather than the underlying infrastructure. {{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan deploys the Enterprise license version of Elasticsearch.
+
+
+
+
 
 ## {{site.data.keyword.databases-for-elasticsearch}} feature availability and Elastic licensing: before you enable
 {: #elastic-before-enabling}

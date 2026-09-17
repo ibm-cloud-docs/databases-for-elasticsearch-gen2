@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-06-23"
+lastupdated: "2026-09-17"
 
 keywords: kibana, elasticsearch container, elasticsearch getting started
 
@@ -78,7 +78,7 @@ Follow these steps to complete the tutorial: {: terraform}
 
 To connect to your {{site.data.keyword.databases-for-elasticsearch}} Gen2 deployment:
 
-1. **Configure Virtual Private Endpoint (VPE)**: You must set up a VPE to establish connectivity between your VPC and the database service.
+1. **Configure Virtual Private Endpoint (VPE)**: Set up a VPE to establish connectivity between your VPC and the database service.
 2. **Ensure VPC access**: Your application or client must be running within the VPC or have appropriate VPC access configured.
 3. **Use private endpoints**: All connections to Gen2 deployments use private endpoints only. Public endpoints are not available.
 
@@ -89,9 +89,11 @@ For detailed VPE setup instructions, see [Connecting through Virtual Private End
 ## Step 1: Choose your plan
 {: #choose_plan}
 
-{{site.data.keyword.databases-for-elasticsearch}} offers Elasticsearch Enterprise with an Enterprise license.
+{{site.data.keyword.databases-for-elasticsearch}} offers Elasticsearch Enterprise with an Enterprise license .
 
 {{site.data.keyword.databases-for-elasticsearch}} **Enterprise** deploys Elasticsearch Enterprise, providing you with a fully managed and scalable Elasticsearch service with enterprise-grade features, allowing you to focus on your applications and data rather than the underlying infrastructure.
+
+
 
 Platinum license support is not currently available.
 {: note}
@@ -102,7 +104,7 @@ Platinum license support is not currently available.
 
 Use the [{{site.data.keyword.databases-for}} API](https://cloud.ibm.com/apidocs/cloud-databases-api/cloud-databases-api-v5#introduction){: external} to work with your {{site.data.keyword.databases-for-elasticsearch}} instance. The resource controller API is used to [provision an instance](#provision_instance_api).
 
-You will need an API key to perform actions via the API. Follow [these steps](/docs/iam?topic=iam-userapikey&interface=ui#create_user_key){: external} to create an IBM Cloud API key that enables you to use the API to provision infrastructure into your account. You can create up to 20 API keys.
+You need an API key to complete actions using the API. Follow [these steps](/docs/iam?topic=iam-userapikey&interface=ui#create_user_key){: external} to create an IBM Cloud API key that enables you to use the API to provision infrastructure into your account. You can create up to 20 API keys.
 
 For security reasons, the API key is only available to be copied or downloaded at the time of creation. If the API key is lost, you must create a new API key.
 {: note}
