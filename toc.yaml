@@ -14,8 +14,8 @@ toc:
       id: learn
       topics:
       - link:
-          label: IBM Cloud Databases
-          href: https://cloud.ibm.com/docs/cloud-databases
+          label: IBM Cloud Databases Gen 2
+          href: https://cloud.ibm.com/docs/cloud-databases-gen2
       - link:
           label: What is Elasticsearch?
           href: https://www.ibm.com/cloud/learn/elasticsearch
