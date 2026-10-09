@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-06"
+lastupdated: "2026-10-08"
 
 keywords: databases-for-elasticsearch release notes
 
@@ -20,7 +20,12 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-elasticsearch_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
 
+## 7 October 2026
+{: #databases-for-elasticsearch-gen2-07oct2026}
+{: release-note}
 
+Enhanced Bring Your Own Key (BYOK) experience in the provisioning UI
+ : The provisioning experience now includes an updated encryption configuration component for customer-managed encryption keys through {{site.data.keyword.keymanagementservicefull}}. This update provides a more consistent key management experience during deployment creation. Learn more about [{{site.data.keyword.keymanagementserviceshort}} integration](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-key-protect&interface=ui) or provision a new [{{site.data.keyword.databases-for-elasticsearch}} Gen 2 deployment](https://cloud.ibm.com/databases/databases-for-elasticsearch/create) with customer-managed encryption enabled.
 
 ## 1 October 2026
 {: #databases-for-elasticsearch-gen2-01oct2026}
