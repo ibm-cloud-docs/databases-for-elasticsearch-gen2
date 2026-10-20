@@ -23,6 +23,7 @@ toc:
         navtitle: Getting started
       - learn-es-plat.md
       - include: ../cloud-databases-gen2/overview.md
+      - limitations.md
       - include: ../cloud-databases-gen2/isolated-compute.md
       - learn-dashboard-overview.md
       - release-notes.md
