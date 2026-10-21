@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-20"
+lastupdated: "2026-10-21"
 
 keywords: elasticsearch gen 2 differences, elasticsearch gen 2 limitations, cloud databases gen 2 elasticsearch, gen 1 vs gen 2
 
@@ -58,8 +58,8 @@ The following list represents capabilities available in Gen 1 that are not yet a
 | **Small scale database instances**  \n Support for lowest price vCPU hosting models. | Future release | Cost-optimized deployment (nano) profiles that provide a lower-cost alternative for smaller workloads while maintaining the benefits of the Gen 2 architecture. Nano profiles replace the Gen 1 shared hosting model with dedicated Gen 2 deployments that offer greater flexibility and isolation.  |
 | **{{site.data.keyword.keymanagementservicelong}}: Key Ring scope**  \n Scoping IAM Service-to-Service authorization policies to a Key Ring. | Future release | IAM Service-to-Service (S2S) policies restricted to a Key Ring return `422 Unprocessable Entity`.  \n **Workaround:** Scope the S2S authorization policy to the {{site.data.keyword.keymanagementserviceshort}} instance or a single Key CRN. |
 | **{{site.data.keyword.keymanagementserviceshort}}: Resource group scope**  \n Scoping IAM Service-to-Service authorization policies to a resource group. | Future release | The Gen 2 provisioning broker does not evaluate broad resource group-scoped S2S policies.  \n **Workaround:** Scope the S2S policy directly to the specific {{site.data.keyword.keymanagementserviceshort}} instance. |
-| **Read replicas**  \n Dedicated read replicas for offloading read queries or disaster recovery (available cross-region or locally).  | Future release | Dedicated cross-region and local read-only replicas for query offloading are planned in a future release. **Workaround:** Scale horizontally by adding internal cluster data members to distribute read traffic. |
-| **Kill all connections (End connections)**  \n Terminate all active database sessions by using a single administrative action. | Future release | The one-click button and `ibmcloud cdb deployment-kill-connections` command are not yet available in Gen 2.  \n **Workaround:** Cancel active operations by using the Elasticsearch Tasks API (`POST _tasks/<task_id>/_cancel`), or restart the instance. |
+| **Horizontal scaling**  \n Increase the number of database members. | Future release | Add additional members to the Elasticsearch cluster. |
+| **Configuration settings**    \n  Configuration settings are set through the {{site.data.keyword.cloud}} interface.| Future release | Set configuration parameters in the {{site.data.keyword.databases-for}} in the console, by using the CLI, API, or Terraform provided by {{site.data.keyword.cloud}}. |
 {: caption="Feature parity for {{site.data.keyword.databases-for-elasticsearch}} Gen 2" caption-side="bottom"}
 
 ## Detailed domain breakdown
