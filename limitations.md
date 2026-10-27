@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-21"
+lastupdated: "2026-10-27"
 
 keywords: elasticsearch gen 2 differences, elasticsearch gen 2 limitations, cloud databases gen 2 elasticsearch, gen 1 vs gen 2
 
@@ -59,7 +59,7 @@ The following list represents capabilities available in Gen 1 that are not yet a
 | **{{site.data.keyword.keymanagementservicelong}}: Key Ring scope**  \n Scoping IAM Service-to-Service authorization policies to a Key Ring. | Future release | IAM Service-to-Service (S2S) policies restricted to a Key Ring return `422 Unprocessable Entity`.  \n **Workaround:** Scope the S2S authorization policy to the {{site.data.keyword.keymanagementserviceshort}} instance or a single Key CRN. |
 | **{{site.data.keyword.keymanagementserviceshort}}: Resource group scope**  \n Scoping IAM Service-to-Service authorization policies to a resource group. | Future release | The Gen 2 provisioning broker does not evaluate broad resource group-scoped S2S policies.  \n **Workaround:** Scope the S2S policy directly to the specific {{site.data.keyword.keymanagementserviceshort}} instance. |
 | **Horizontal scaling**  \n Increase the number of database members. | Future release | Add additional members to the Elasticsearch cluster. |
-| **Configuration settings**    \n  Configuration settings are set through the {{site.data.keyword.cloud}} interface.| Future release | Set configuration parameters in the {{site.data.keyword.databases-for}} in the console, by using the CLI, API, or Terraform provided by {{site.data.keyword.cloud}}. |
+| **Configuration settings**    \n  Configuration settings set through the {{site.data.keyword.cloud}} interface. | Future release | Set configuration parameters for {{site.data.keyword.databases-for}} deployments in the console or by using the CLI, API, or Terraform. |
 {: caption="Feature parity for {{site.data.keyword.databases-for-elasticsearch}} Gen 2" caption-side="bottom"}
 
 ## Detailed domain breakdown
