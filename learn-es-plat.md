@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2026
-lastupdated: "2026-09-17"
+lastupdated: "2026-10-28"
 
 keywords: elasticsearch enterprise, elasticsearch platinum, elasticsearch plans, features
 
@@ -55,7 +55,8 @@ All {{site.data.keyword.databases-for-elasticsearch}} clusters on any plan can m
 
 The {{site.data.keyword.databases-for-elasticsearch}} Enterprise Plan provides all the key functionalities of the Elasticsearch service available under an Elastic Enterprise license, including the following:
 
-- Security capabilities, including Role Based Access Control (RBAC), field- and document-level security, single sign-on (SAML, OpenID Connect, Kerberos, and JWT), attribute-based access control, Elasticsearch and Kibana audit logging, and encryption at rest support.
+- Security capabilities, including Role Based Access Control (RBAC), field- and document-level security, attribute-based access control, Elasticsearch and Kibana audit logging, and encryption at rest support.
+- Single sign-on (SSO) is not currently supported. It will be available in a future release.
 - Data management capabilities, including Index Lifecycle Management (ILM), searchable snapshots, snapshot lifecycle management, and data tiers.
 - Alerting capabilities, including Watcher and machine learning anomaly detection rule types.
 - Monitoring capabilities, including full-stack monitoring across the Elastic Stack.
