@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-14"
+lastupdated: "2026-10-30"
 
 keywords: databases-for-elasticsearch release notes
 
@@ -19,6 +19,8 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-elasticsearch_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
+
+
 
 ## 12 October 2026
 {: #databases-for-elasticsearch-gen2-12oct2026}
