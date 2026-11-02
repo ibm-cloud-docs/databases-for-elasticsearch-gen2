@@ -34,8 +34,11 @@ toc:
       id: howto
       topics:
       - howto-provisioning.md
+      - topic: migrate-to-gen2.md
+        navtitle: Migrating to Gen 2
       - include: ../cloud-databases-gen2/backup-restore.md
       - include: ../cloud-databases-gen2/coupled-backups.md
+      - include: ../cloud-databases-gen2/independent-backups.md
       - howto-user-management.md
       - howto-getting-connection-strings.md
       - include: ../cloud-databases-gen2/ha-dr.md

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-10-30"
+lastupdated: "2026-11-02"
 
 keywords: databases-for-elasticsearch release notes
 
@@ -20,7 +20,12 @@ content-type: release-note
 Use these release notes to learn about the latest updates to {{site.data.keyword.databases-for-elasticsearch_full}} that are grouped by _date_ or _build number_.
 {: shortdesc}
 
+## 2 November 2026
+{: #databases-for-elasticsearch-gen2-02nov2026}
+{: release-note}
 
+{{site.data.keyword.databases-for-elasticsearch}} Gen 1 to Gen 2 migration is now generally available
+:  Migration from Gen 1 (Classic) to Gen 2 (VPC) is now available for {{site.data.keyword.databases-for-elasticsearch}}. You can migrate by using the Migration Hub in the {{site.data.keyword.cloud}} console, Terraform, the API, or the CLI. Backup and restore is the supported migration path, and migration supports both Platinum-to-Enterprise and Enterprise-to-Standard plan transitions. For more information, see [Migrating {{site.data.keyword.databases-for-elasticsearch}} from Gen 1 to Gen 2](/docs/databases-for-elasticsearch-gen2?topic=databases-for-elasticsearch-gen2-migrating-elasticsearch-gen1-to-gen2&interface=ui).
 
 ## 12 October 2026
 {: #databases-for-elasticsearch-gen2-12oct2026}
