@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-11-02"
+lastupdated: "2026-11-05"
 
 keywords: elasticsearch migration, gen1 to gen2, classic infrastructure, vpc, backup and restore, migration hub, terraform, ibmcloud cli, private endpoints, version upgrade, platinum, enterprise, standard, plan transition
 
@@ -292,7 +292,7 @@ Before you begin:
    ```
    {: pre}
 
-Migration to Gen 2 is initially available in the us-east (Washington, DC) region, with additional regions to follow. Ensure that the region you specify is a supported Gen 2 region, such as `us-east`.
+Migration to Gen 2 is initially available in the us-east (Washington, DC), br-sao (São Paulo), and us-south (Dallas) regions, with additional regions to follow. Ensure that the region you specify is a supported Gen 2 region, such as `us-east`.
 {: note}
 
 ### Backup and restore migration with the CLI
@@ -486,7 +486,7 @@ IAM_TOKEN=$(curl -s -X POST "https://iam.cloud.ibm.com/identity/token" \
 ```
 {: pre}
 
-Migration to Gen 2 is initially available in the `us-east` (Washington, DC) region, with additional regions to follow. Ensure that the region you specify is a supported Gen 2 region, such as `us-east`.
+Migration to Gen 2 is initially available in the us-east (Washington, DC), br-sao (São Paulo), and us-south (Dallas) regions, with additional regions to follow. Ensure that the region you specify is a supported Gen 2 region, such as `us-east`.
 {: note}
 
 ### Backup and restore migration with the API
@@ -683,7 +683,7 @@ Before you begin:
 - [Install the Terraform CLI and the IBM Cloud Provider plug-in](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-setup_cli#tf_installation){: external}.
 - Ensure that you have an [IBM Cloud API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key){: external}.
 
-Gen 2 is initially available in the us-east (Washington, DC) region, with additional regions to follow. Ensure that the location parameter in your configurations specifies a supported Gen 2 region, such as us-east.
+Migration to Gen 2 is initially available in the us-east (Washington, DC), br-sao (São Paulo), and us-south (Dallas) regions, with additional regions to follow. Ensure that the region you specify is a supported Gen 2 region, such as `us-east`.
 {: note}
 
 ### Backup and restore migration with Terraform
